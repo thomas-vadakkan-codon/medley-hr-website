@@ -1,26 +1,200 @@
+/*
+ * MEDLEY HR — Marketing Website
+ *
+ * COMPETITOR RESEARCH FINDINGS (Phase 0):
+ *
+ * Keka HR: Enterprise "People Operations Platform" positioning. Starts ₹99/employee/month.
+ *   Gap: Expensive for SMBs, copy feels like a Western enterprise clone, no affordability pride.
+ *
+ * Zoho Payroll: "Effortless Payroll" — simple message, warm aesthetic. ₹60/employee/month.
+ *   Gap: Bundled in Zoho ecosystem, not standalone identity; employee self-service underplayed.
+ *
+ * greytHR: "Simplicity, speed and efficiency" — utility-focused. ₹30/employee minimum.
+ *   Gap: Dated design, no modern SaaS feel, great user base but underwhelming brand presence.
+ *
+ * Darwinbox: Pure enterprise, no public pricing (~$5/emp + $5K–50K implementation).
+ *   Gap: Completely excludes SMBs, opaque pricing is a massive trust barrier.
+ *
+ * Razorpay Payroll: "Three Clicks" — startup-friendly. ₹100/employee/month Pro plan.
+ *   Gap: Payroll-only framing, tied to fintech identity, not a full HRMS.
+ *
+ * POSITIONING GAPS MEDLEY HR OWNS:
+ * 1. Transparent, affordable pricing — no competitor leads with "we're priced for real businesses"
+ * 2. Employee self-service as an HR workload reducer — no competitor owns this angle
+ * 3. India-first compliance as default (not add-on)
+ * 4. Human, direct voice — everyone else speaks corporate or startup-techie
+ * 5. All-in-one without the enterprise price tag
+ */
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Brand */
+  --color-brand-primary: #0f9e8a;
+  --color-brand-hover: #0c8a78;
+  --color-brand-subtle: #e6f7f5;
+  --color-brand-accent: #22c55e;
+  --color-brand-dark: #065f52;
+  --color-brand-deep: #0a5248;
+
+  /* Surfaces */
+  --color-bg-base: #f8fafb;
+  --color-surface: #ffffff;
+  --color-surface-raised: #f1f5f9;
+  --color-surface-muted: #f8fafb;
+
+  /* Text */
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #94a3b8;
+  --color-text-inverse: #ffffff;
+
+  /* Borders */
+  --color-border: #e2e8f0;
+  --color-border-subtle: #f1f5f9;
+
+  /* Status */
+  --color-success: #16a34a;
+  --color-success-subtle: #dcfce7;
+  --color-warning: #d97706;
+  --color-warning-subtle: #fef9c3;
+  --color-error: #dc2626;
+  --color-error-subtle: #fee2e2;
+  --color-info: #2563eb;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Spacing multipliers (8pt grid) */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8fafb;
+  color: #0f172a;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Ensure nav links don't reflow during scroll */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Type scale */
+.text-display {
+  font-size: clamp(40px, 5.5vw, 68px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.text-h1 {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.text-h2 {
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.text-h3 {
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.text-body-lg {
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.text-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+/* Layout */
+.container-wide {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 768px) {
+  .container-wide {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.section-padding {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+/* Animations */
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float-gentle 3.5s ease-in-out infinite;
+}
+
+/* Focus ring — accessible but not intrusive */
+:focus-visible {
+  outline: 2px solid #0f9e8a;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
 }
