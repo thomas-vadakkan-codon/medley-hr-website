@@ -247,6 +247,7 @@ a {
 
   .v4-how-header { flex-direction: column !important; align-items: flex-start !important; gap: 14px !important; padding: 20px 24px !important; }
   .v4-how-steps  { grid-template-columns: 1fr !important; }
+  .v4-step-arrow { transform: rotate(90deg) !important; transform-origin: center !important; }
 
   .v4-feat-card-grid { grid-template-columns: 1fr !important; min-height: auto !important; }
   .v4-feat-text   { order: 1 !important; padding: 28px 24px !important; }

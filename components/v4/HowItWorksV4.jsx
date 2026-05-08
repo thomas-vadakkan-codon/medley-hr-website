@@ -48,14 +48,14 @@ export default function HowItWorksV4() {
                 padding: '32px 28px 36px', overflow: 'hidden', position: 'relative',
               }}
             >
-              {/* Ghost number */}
-              <div style={{
-                position: 'absolute', bottom: -20, right: 12,
+              {/* Ghost arrow */}
+              <div className="v4-step-arrow" style={{
+                position: 'absolute', bottom: -10, right: 16,
                 fontFamily: 'Anton, Impact, sans-serif',
-                fontSize: 110, color: i === 1 ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.04)',
+                fontSize: 120, color: i === 1 ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.05)',
                 lineHeight: 1, userSelect: 'none', pointerEvents: 'none',
               }}>
-                {step.num}
+                →
               </div>
 
               <div style={{
