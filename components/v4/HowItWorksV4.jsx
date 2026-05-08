@@ -48,15 +48,13 @@ export default function HowItWorksV4() {
                 padding: '32px 28px 36px', overflow: 'hidden', position: 'relative',
               }}
             >
-              {/* Ghost arrow */}
-              <div className="v4-step-arrow" style={{
-                position: 'absolute', bottom: -10, right: 16,
-                fontFamily: 'Anton, Impact, sans-serif',
-                fontSize: 120, color: i === 1 ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.05)',
-                lineHeight: 1, userSelect: 'none', pointerEvents: 'none',
-              }}>
-                →
-              </div>
+              {/* Ghost circle */}
+              <div style={{
+                position: 'absolute', bottom: -50, right: -50,
+                width: 180, height: 180, borderRadius: '50%',
+                border: `18px solid ${i === 1 ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)'}`,
+                pointerEvents: 'none',
+              }} />
 
               <div style={{
                 width: 36, height: 36, borderRadius: '50%',
