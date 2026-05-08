@@ -1,3 +1,5 @@
+import FooterV4 from '@/components/v4/FooterV4'
+
 const TEAL = '#0f9e8a'
 const AMBER = '#F5C518'
 const DARK = '#0D0F14'
@@ -127,12 +129,21 @@ export default function TermsPage() {
                 MEDLEY<span style={{ color: TEAL }}>HR</span>
               </span>
             </a>
-            <a href="https://app.medleyhr.com/signup" style={{
-              padding: '8px 18px', background: TEAL, borderRadius: 8,
-              fontSize: 13, fontWeight: 700, color: 'white', textDecoration: 'none', letterSpacing: '0.02em',
-            }}>
-              START FOR FREE
-            </a>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+              <a href="/v4" style={{
+                display: 'inline-flex', alignItems: 'center', gap: 6,
+                padding: '7px 14px', border: '1.5px solid rgba(255,255,255,0.15)', borderRadius: 8,
+                fontSize: 13, fontWeight: 500, color: 'rgba(255,255,255,0.6)', textDecoration: 'none',
+              }}>
+                ← Back
+              </a>
+              <a href="https://app.medleyhr.com/signup" style={{
+                padding: '8px 18px', background: TEAL, borderRadius: 8,
+                fontSize: 13, fontWeight: 700, color: 'white', textDecoration: 'none', letterSpacing: '0.02em',
+              }}>
+                START FOR FREE
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -210,23 +221,7 @@ export default function TermsPage() {
         </div>
       </div>
 
-      {/* Footer strip */}
-      <div style={{ padding: '0 16px 16px' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-          <div style={{
-            background: DARK, borderRadius: 16, border: BORDER,
-            padding: '24px 36px',
-            display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16,
-          }}>
-            <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.3)' }}>© 2026 MedleyHR</span>
-            <div style={{ display: 'flex', gap: 24 }}>
-              <a href="/privacy" style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', textDecoration: 'none', fontWeight: 500 }}>Privacy Policy</a>
-              <a href="/terms" style={{ fontSize: 13, color: TEAL, textDecoration: 'none', fontWeight: 500 }}>Terms of Service</a>
-              <a href="mailto:hello@medleyhr.com" style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', textDecoration: 'none', fontWeight: 500 }}>Contact</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <FooterV4 />
     </div>
   )
 }
