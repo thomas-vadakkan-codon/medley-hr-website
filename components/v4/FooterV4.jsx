@@ -48,8 +48,8 @@ export default function FooterV4() {
               LEGAL
             </p>
             <ul style={{ listStyle: 'none', margin: '0 0 28px', padding: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-              {['Privacy Policy', 'Terms of Service'].map(l => (
-                <li key={l}><a href="#" style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', fontWeight: 500, textDecoration: 'none' }}>{l}</a></li>
+              {[{ label: 'Privacy Policy', href: '/privacy' }, { label: 'Terms of Service', href: '/terms' }].map(({ label, href }) => (
+                <li key={label}><a href={href} style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', fontWeight: 500, textDecoration: 'none' }}>{label}</a></li>
               ))}
             </ul>
             <a href="mailto:hello@medleyhr.com" style={{
