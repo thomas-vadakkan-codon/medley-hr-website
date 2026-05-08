@@ -7,8 +7,10 @@ const DARK = '#0D0F14'
 const BORDER = `2px solid ${DARK}`
 
 export const metadata = {
-  title: 'Privacy Policy — MedleyHR',
-  description: 'How MedleyHR collects, uses, and protects your data.',
+  title: 'Privacy Policy',
+  description: 'How MedleyHR collects, uses, and protects your employee and payroll data. Your data belongs to you.',
+  alternates: { canonical: 'https://medleyhr.com/privacy' },
+  robots: { index: true, follow: true },
 }
 
 const SECTIONS = [

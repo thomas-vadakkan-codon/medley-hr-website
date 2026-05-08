@@ -1,0 +1,71 @@
+# MedleyHR
+
+> MedleyHR is a self-serve HR and payroll management platform built specifically for Indian businesses. It lets any company run payroll, manage leaves, track attendance, and stay compliant with Indian labour law — without an implementation consultant or a months-long setup.
+
+## What is MedleyHR?
+
+MedleyHR is an HRMS (Human Resource Management System) operated by Codonsoft Technologies, Bengaluru, India. It is designed for Indian companies of all sizes — from 5-person startups to multi-branch enterprises — who want to own their HR operations without depending on consultants or spreadsheets.
+
+The platform is fully self-serve: sign up, configure, and run your first payroll on the same day. Most teams complete setup in under a few hours.
+
+## Key Capabilities
+
+- **Payroll automation**: Calculate salaries, deductions, and net pay automatically. Supports custom salary components, arrears, and bonus processing.
+- **India statutory compliance**: PF (Provident Fund), ESI, TDS, Professional Tax, and Form 16 — handled out of the box, updated automatically with regulatory changes.
+- **Leave management**: Configure leave policies, track balances, and manage approval workflows.
+- **Attendance and working hours**: Track working hours, shifts, and attendance records.
+- **Employee self-service**: Employees can view payslips, apply for leave, submit reimbursements, and update personal details without HR intervention.
+- **Loans and reimbursements**: Manage salary advances and expense reimbursements within the payroll cycle.
+- **Salary revision approvals**: Structured workflow for salary changes with approval chains.
+- **Multi-branch reporting**: Manage multiple office locations, departments, and pay schedules under one organisation.
+- **Team status module**: Real-time visibility into team availability and escalation management (Scale plan).
+- **Direct bank integration**: Disburse salaries directly to employee bank accounts (Scale plan).
+
+## Pricing
+
+MedleyHR offers three plans, billed per employee per month:
+
+- **Starter** — Free, for up to 10 employees. Includes core HR, payslip generation, leave management, employee self-service, and basic reports. No credit card required.
+- **Growth** — ₹35/employee/month (₹29 billed annually). Full payroll suite with approval workflows, attendance, loans and reimbursements, Form 16 and TDS, salary revision approvals, and multi-branch reporting. 2 months free on annual billing.
+- **Scale** — ₹55/employee/month (₹46 billed annually). Everything in Growth plus team status module, escalation management, direct bank integration, custom salary components, priority support, and a dedicated account manager. 2 months free on annual billing.
+
+All prices are in Indian Rupees (INR), exclusive of GST. No setup fee. No implementation cost. No contracts.
+
+## Who Uses MedleyHR?
+
+MedleyHR is built for:
+- Indian SMEs and startups that have outgrown spreadsheet-based payroll
+- HR managers who want to run payroll without depending on an external consultant
+- Finance teams that need India-compliant statutory filings automated
+- Multi-location businesses that need centralised HR across branches
+
+## Frequently Asked Questions
+
+**Can MedleyHR migrate data from another HRMS?**
+Yes. Connect last month's payroll data during setup and run the next payroll without a gap. Most teams complete migration within a day.
+
+**Is MedleyHR compliant with Indian tax laws?**
+Yes. PF, ESI, TDS, PT, and Form 16 are handled out of the box and updated automatically when regulations change.
+
+**Do I need a consultant to set up MedleyHR?**
+No. MedleyHR is fully self-serve. Sign up, configure your organisation, and you are ready to run payroll. Most teams are set up within a day.
+
+**Is payroll data secure on MedleyHR?**
+Yes. 256-bit SSL encryption, role-based access controls, and regular security audits. Your data belongs to you and is never sold.
+
+**Can MedleyHR handle multiple offices?**
+Yes. Multi-branch support is available on the Growth and Scale plans, with separate departments, locations, and pay schedules under one organisation.
+
+## Company Information
+
+- **Product**: MedleyHR
+- **Operated by**: Codonsoft Technologies
+- **Location**: Bengaluru, Karnataka, India
+- **Contact**: hello@medleyhr.com
+- **Website**: https://medleyhr.com
+- **Sign up**: https://app.medleyhr.com/signup
+
+## Optional: Full documentation
+
+- Terms of Service: https://medleyhr.com/terms
+- Privacy Policy: https://medleyhr.com/privacy

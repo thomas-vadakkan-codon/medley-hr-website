@@ -7,8 +7,10 @@ const DARK = '#0D0F14'
 const BORDER = `2px solid ${DARK}`
 
 export const metadata = {
-  title: 'Terms of Service — MedleyHR',
-  description: 'Terms and conditions for using the MedleyHR platform.',
+  title: 'Terms of Service',
+  description: 'Terms and conditions for using the MedleyHR platform. Governs your use of MedleyHR HR and payroll software.',
+  alternates: { canonical: 'https://medleyhr.com/terms' },
+  robots: { index: true, follow: true },
 }
 
 const SECTIONS = [

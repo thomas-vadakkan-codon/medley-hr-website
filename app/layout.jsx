@@ -10,35 +10,65 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata = {
   metadataBase: new URL('https://medleyhr.com'),
-  title: 'Medley HR — Payroll & HR Software for Indian Businesses',
+  title: {
+    default: 'MedleyHR — Self-Serve HR & Payroll Software for Indian Businesses',
+    template: '%s | MedleyHR',
+  },
   description:
-    'Run payroll, manage leaves, track attendance, and stay India-compliant — all in one place. Affordable HR software for teams of all sizes.',
+    'Run payroll, manage leaves, track attendance, and stay India-compliant — PF, ESI, TDS, Form 16 — all in one self-serve HRMS. Free for up to 10 employees.',
+  applicationName: 'MedleyHR',
+  authors: [{ name: 'Codonsoft Technologies', url: 'https://medleyhr.com' }],
+  creator: 'Codonsoft Technologies',
+  publisher: 'Codonsoft Technologies',
+  category: 'Business Software',
+  keywords: [
+    'HR software India',
+    'payroll software India',
+    'HRMS India',
+    'self-serve HRMS',
+    'payroll automation India',
+    'leave management software',
+    'Form 16 software',
+    'PF ESI TDS compliance software',
+    'employee self service portal',
+    'salary management software India',
+    'HR software for startups India',
+    'multi-branch HRMS',
+    'Indian payroll compliance',
+    'attendance management software',
+  ],
   openGraph: {
-    title: 'Medley HR',
-    description: 'Payroll and HR management built for India.',
+    title: 'MedleyHR — Self-Serve HR & Payroll for Indian Businesses',
+    description: 'Run payroll, manage leaves, and stay India-compliant — without a consultant. Free for up to 10 employees.',
     url: 'https://medleyhr.com',
-    siteName: 'Medley HR',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    siteName: 'MedleyHR',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'MedleyHR — HR and Payroll Software' }],
     locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Medley HR',
-    description: 'Payroll and HR management built for India.',
+    title: 'MedleyHR — Self-Serve HR & Payroll for Indian Businesses',
+    description: 'Run payroll, manage leaves, and stay India-compliant — without a consultant. Free for up to 10 employees.',
+    creator: '@medleyhr',
   },
-  keywords: [
-    'HR software India',
-    'payroll software India',
-    'HRMS India',
-    'leave management',
-    'Form 16',
-    'PF ESI TDS compliance',
-    'employee self service',
-  ],
+  alternates: {
+    canonical: 'https://medleyhr.com',
+  },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+  verification: {
+    // Add Google Search Console / Bing verification tokens here when available
+    // google: 'your-token',
   },
 }
 
