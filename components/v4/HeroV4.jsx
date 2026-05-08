@@ -43,7 +43,7 @@ function CircleStamp() {
 export default function HeroV4() {
   return (
     <section style={{
-      paddingTop: 76, paddingBottom: 16, paddingLeft: 16, paddingRight: 16,
+      paddingTop: 90, paddingBottom: 16, paddingLeft: 16, paddingRight: 16,
       fontFamily: 'Plus Jakarta Sans, sans-serif',
     }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>

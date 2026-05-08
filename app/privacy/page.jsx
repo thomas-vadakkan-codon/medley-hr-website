@@ -94,8 +94,8 @@ export default function PrivacyPage() {
     <div style={{ background: '#F0F4F1', minHeight: '100vh', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
       <NavV4 />
 
-      {/* Hero — paddingTop matches fixed nav height */}
-      <div style={{ padding: '76px 16px 0' }}>
+      {/* Hero — paddingTop offsets fixed nav */}
+      <div style={{ padding: '90px 16px 0' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto' }}>
           <div style={{
             background: AMBER, borderRadius: 20, border: BORDER,
