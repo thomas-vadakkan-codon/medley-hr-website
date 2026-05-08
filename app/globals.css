@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 /*
  * MEDLEY HR — Marketing Website
  *
@@ -202,8 +204,6 @@ a {
 /* ═══════════════════════════════════════
    V4 DESIGN SYSTEM
 ═══════════════════════════════════════ */
-
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 .v4-display {
   font-family: 'Anton', Impact, sans-serif;
