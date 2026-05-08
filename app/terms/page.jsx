@@ -1,3 +1,4 @@
+import NavV4 from '@/components/v4/NavV4'
 import FooterV4 from '@/components/v4/FooterV4'
 
 const TEAL = '#0f9e8a'
@@ -117,30 +118,10 @@ const SECTIONS = [
 export default function TermsPage() {
   return (
     <div style={{ background: '#F0F4F1', minHeight: '100vh', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
-      {/* Nav bar */}
-      <div style={{ padding: '16px 16px 0' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-          <div style={{
-            background: DARK, borderRadius: 14, padding: '0 24px', height: 52,
-            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          }}>
-            <a href="/v4" style={{ textDecoration: 'none' }}>
-              <span style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 20, color: 'white', letterSpacing: '0.02em' }}>
-                MEDLEY<span style={{ color: TEAL }}>HR</span>
-              </span>
-            </a>
-            <a href="https://app.medleyhr.com/signup" style={{
-              padding: '8px 18px', background: TEAL, borderRadius: 8,
-              fontSize: 13, fontWeight: 700, color: 'white', textDecoration: 'none', letterSpacing: '0.02em',
-            }}>
-              START FOR FREE
-            </a>
-          </div>
-        </div>
-      </div>
+      <NavV4 />
 
-      {/* Hero */}
-      <div style={{ padding: '16px 16px 0' }}>
+      {/* Hero — paddingTop matches fixed nav height */}
+      <div style={{ padding: '76px 16px 0' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto' }}>
           <div style={{
             background: DARK, borderRadius: 20, border: BORDER,
