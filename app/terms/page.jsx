@@ -129,21 +129,12 @@ export default function TermsPage() {
                 MEDLEY<span style={{ color: TEAL }}>HR</span>
               </span>
             </a>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-              <a href="/v4" style={{
-                display: 'inline-flex', alignItems: 'center', gap: 6,
-                padding: '7px 14px', border: '1.5px solid rgba(255,255,255,0.15)', borderRadius: 8,
-                fontSize: 13, fontWeight: 500, color: 'rgba(255,255,255,0.6)', textDecoration: 'none',
-              }}>
-                ← Back
-              </a>
-              <a href="https://app.medleyhr.com/signup" style={{
-                padding: '8px 18px', background: TEAL, borderRadius: 8,
-                fontSize: 13, fontWeight: 700, color: 'white', textDecoration: 'none', letterSpacing: '0.02em',
-              }}>
-                START FOR FREE
-              </a>
-            </div>
+            <a href="https://app.medleyhr.com/signup" style={{
+              padding: '8px 18px', background: TEAL, borderRadius: 8,
+              fontSize: 13, fontWeight: 700, color: 'white', textDecoration: 'none', letterSpacing: '0.02em',
+            }}>
+              START FOR FREE
+            </a>
           </div>
         </div>
       </div>
@@ -155,14 +146,14 @@ export default function TermsPage() {
             background: DARK, borderRadius: 20, border: BORDER,
             padding: '48px 56px',
           }}>
-            <div style={{
-              display: 'inline-block', padding: '4px 12px',
-              border: `1px solid rgba(255,255,255,0.15)`, borderRadius: 999,
-              fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.06em',
-              textTransform: 'uppercase', marginBottom: 20,
+            <a href="/v4" style={{
+              display: 'inline-flex', alignItems: 'center', gap: 6,
+              padding: '5px 12px', border: `1px solid rgba(255,255,255,0.2)`, borderRadius: 999,
+              fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.6)', letterSpacing: '0.06em',
+              textTransform: 'uppercase', marginBottom: 20, textDecoration: 'none',
             }}>
-              Legal
-            </div>
+              ← Back to MedleyHR
+            </a>
             <h1 style={{
               fontFamily: 'Anton, Impact, sans-serif',
               fontSize: 'clamp(40px, 6vw, 80px)',
