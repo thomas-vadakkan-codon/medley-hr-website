@@ -57,7 +57,7 @@ export default function FooterV4() {
               background: AMBER, border: `2px solid ${AMBER}`, borderRadius: 7,
               fontSize: 12, fontWeight: 700, color: DARK, textDecoration: 'none', letterSpacing: '0.04em',
             }}>
-              NEED HELP?
+              TALK TO US
             </a>
           </div>
         </div>
