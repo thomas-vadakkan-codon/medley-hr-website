@@ -9,31 +9,87 @@ const BORDER = `2px solid ${DARK}`
 
 const TIERS = [
   {
-    num: '01', name: 'STARTER', price: 'FREE',
-    sub: 'Up to 10 employees',
+    num: '01', name: 'FREE',
+    price: '₹0',
+    sub: 'Always free · Unlimited employees',
     bg: 'white', textDark: true,
-    features: ['Core HR and employee database', 'Payslip generation', 'Leave management', 'Employee self-service', 'Basic reports'],
+    badge: null,
+    includes: null,
+    addOn: null,
+    storage: '1GB storage',
+    features: [
+      'Unlimited employees',
+      'Unlimited branches',
+      'Employee database',
+      'Leave management',
+      'Payslip viewing',
+      'Employee self-service portal',
+      '1GB org storage',
+    ],
     cta: 'START FOR FREE', ctaBg: DARK, ctaColor: 'white',
-    footnote: 'No credit card needed.',
+    footnote: 'No credit card needed. Ever.',
   },
   {
-    num: '02', name: 'GROWTH', price: '₹35', unit: '/emp/mo',
-    annualPrice: '₹29',
-    sub: 'Full suite for growing teams',
+    num: '02', name: 'GROWTH',
+    price: '₹1,999', annualPrice: '₹1,666',
+    sub: 'Full payroll + HR operations',
     badge: 'MOST POPULAR',
     bg: TEAL, textDark: false,
-    features: ['Everything in Starter', 'Full payroll + approval workflow', 'Attendance and working hours', 'Loans and reimbursements', 'Form 16 and TDS', 'Salary revision approvals', 'Multi-branch reporting'],
-    cta: 'START FREE TRIAL', ctaBg: AMBER, ctaColor: DARK,
-    footnote: '2 months free on annual.',
+    includes: '25 employees included',
+    addOn: '₹80 / additional employee',
+    storage: '5GB storage',
+    features: [
+      'Everything in Free',
+      '25 employees included (₹80/additional)',
+      'Full payroll with approval workflow',
+      'TDS, PF, ESI, PT, Form 16',
+      'Bonus & off-cycle pay runs',
+      'Salary hold, LOP & reversal',
+      'FBP — HRA, LTA, food coupons',
+      'Attendance, overtime & working hours',
+      'Loans, advances & reimbursements',
+      'Salary revision with audit trail',
+      'Offer letters & onboarding',
+      'Investment declarations',
+      'Advanced salary components & formulas',
+      'Prior payroll & previous employment data',
+      'Workflow rules & custom fields',
+      'Customisable roles & permissions',
+      'Template library',
+      'Pre-made & module reports',
+      'Payroll document storage',
+      'Audit trail',
+      'Multi-branch reporting',
+      '5GB org storage',
+    ],
+    cta: 'START 14-DAY TRIAL', ctaBg: AMBER, ctaColor: DARK,
+    footnote: 'No credit card needed for trial.',
   },
   {
-    num: '03', name: 'SCALE', price: '₹55', unit: '/emp/mo',
-    annualPrice: '₹46',
-    sub: 'Everything, plus team status',
+    num: '03', name: 'SCALE',
+    price: '₹3,999', annualPrice: '₹3,332',
+    sub: 'Full ops + team visibility',
+    badge: null,
     bg: DARK, textDark: false,
-    features: ['Everything in Growth', 'Team status module', 'Escalation management', 'Direct bank integration', 'Custom salary components', 'Priority support', 'Dedicated account manager'],
-    cta: 'START FREE TRIAL', ctaBg: AMBER, ctaColor: DARK,
-    footnote: '2 months free on annual.',
+    includes: '40 employees included',
+    addOn: '₹100 / additional employee',
+    storage: '10GB storage',
+    features: [
+      'Everything in Growth',
+      '40 employees included (₹100/additional)',
+      'Team status module',
+      'Daily standup submissions',
+      'Task assignment & tracking',
+      'Escalation management',
+      'Direct bank integration',
+      'Custom report builder',
+      'Multi-branch consolidated view',
+      'Priority support',
+      'Dedicated account manager',
+      '10GB org storage',
+    ],
+    cta: 'START 14-DAY TRIAL', ctaBg: AMBER, ctaColor: DARK,
+    footnote: 'No credit card needed for trial.',
   },
 ]
 
@@ -43,24 +99,27 @@ export default function PricingV4() {
   return (
     <section id="pricing" style={{ padding: '16px 16px', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+
         {/* Header */}
         <div className="v4-pricing-header" style={{
           background: AMBER, borderRadius: 18, border: BORDER,
           padding: '32px 36px', marginBottom: 10,
           display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 20,
         }}>
-          <h2 className="v4-display" style={{ fontSize: 'clamp(32px,4vw,56px)', color: DARK, margin: 0 }}>
-            Transparent Pricing.<br /><span style={{ color: TEAL }}>No Surprises.</span>
-          </h2>
+          <div>
+            <h2 className="v4-display" style={{ fontSize: 'clamp(32px,4vw,56px)', color: DARK, margin: '0 0 8px' }}>
+              Transparent Pricing.<br /><span style={{ color: TEAL }}>No Surprises.</span>
+            </h2>
+            <p style={{ fontSize: 13, color: DARK, opacity: 0.6, margin: 0 }}>
+              Per organisation. Not per employee. Unlimited branches.
+            </p>
+          </div>
           <div className="v4-pricing-header-right" style={{ display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'flex-end' }}>
-            <p style={{ fontSize: 14, color: DARK, opacity: 0.7, margin: 0, textAlign: 'right' }}>
-              No setup fee. No implementation cost.<br />No contracts. Just pay for your team.
+            <p style={{ fontSize: 13, color: DARK, opacity: 0.7, margin: 0, textAlign: 'right' }}>
+              No setup fee. No implementation cost.<br />No contracts. Cancel anytime.
             </p>
             {/* Toggle */}
-            <div style={{
-              display: 'inline-flex', background: DARK,
-              borderRadius: 10, padding: 4,
-            }}>
+            <div style={{ display: 'inline-flex', background: DARK, borderRadius: 10, padding: 4 }}>
               {[{ label: 'Monthly', val: false }, { label: 'Annual — 2 months free', val: true }].map(({ label, val }) => (
                 <button key={label} onClick={() => setAnnual(val)} style={{
                   padding: '7px 16px', borderRadius: 7,
@@ -92,25 +151,20 @@ export default function PricingV4() {
               }}
             >
               {tier.badge && (
-                <div style={{
-                  background: AMBER, padding: '6px 0', textAlign: 'center',
-                  borderBottom: BORDER,
-                }}>
-                  <span style={{
-                    fontFamily: 'Anton, Impact, sans-serif',
-                    fontSize: 12, color: DARK, letterSpacing: '0.08em',
-                  }}>
+                <div style={{ background: AMBER, padding: '6px 0', textAlign: 'center', borderBottom: BORDER }}>
+                  <span style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 12, color: DARK, letterSpacing: '0.08em' }}>
                     {tier.badge}
                   </span>
                 </div>
               )}
 
               <div style={{ padding: '28px 28px 32px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+
+                {/* Plan name + number */}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 20 }}>
                   <div>
                     <p style={{
-                      fontFamily: 'Anton, Impact, sans-serif',
-                      fontSize: 22, margin: '0 0 4px',
+                      fontFamily: 'Anton, Impact, sans-serif', fontSize: 22, margin: '0 0 4px',
                       color: tier.textDark ? DARK : 'white', letterSpacing: '0.03em',
                     }}>
                       {tier.name}
@@ -121,39 +175,45 @@ export default function PricingV4() {
                   </div>
                   <span style={{
                     fontFamily: 'Anton, Impact, sans-serif', fontSize: 11,
-                    color: tier.textDark ? '#94a3b8' : 'rgba(255,255,255,0.25)',
-                    letterSpacing: '0.08em',
+                    color: tier.textDark ? '#94a3b8' : 'rgba(255,255,255,0.25)', letterSpacing: '0.08em',
                   }}>
                     / {tier.num}
                   </span>
                 </div>
 
                 {/* Price */}
-                <div style={{ marginBottom: 24, borderTop: `1px solid ${tier.textDark ? '#e2e8f0' : 'rgba(255,255,255,0.12)'}`, paddingTop: 20 }}>
-                  {tier.price === 'FREE' ? (
-                    <span className="v4-display" style={{ fontSize: 52, color: tier.textDark ? DARK : 'white' }}>FREE</span>
-                  ) : (
-                    <div style={{ display: 'flex', alignItems: 'flex-end', gap: 4 }}>
-                      <span className="v4-display" style={{ fontSize: 52, color: tier.textDark ? DARK : 'white', lineHeight: 1 }}>
-                        {annual ? tier.annualPrice : tier.price}
+                <div style={{ marginBottom: 8, borderTop: `1px solid ${tier.textDark ? '#e2e8f0' : 'rgba(255,255,255,0.12)'}`, paddingTop: 20 }}>
+                  <div style={{ display: 'flex', alignItems: 'flex-end', gap: 6 }}>
+                    <span className="v4-display" style={{ fontSize: 48, color: tier.textDark ? DARK : 'white', lineHeight: 1 }}>
+                      {tier.name === 'FREE' ? '₹0' : (annual ? tier.annualPrice : tier.price)}
+                    </span>
+                    <span style={{ fontSize: 12, color: tier.textDark ? '#94a3b8' : 'rgba(255,255,255,0.4)', marginBottom: 6 }}>
+                      /org/month{annual && tier.name !== 'FREE' ? ' · billed annually' : ''}
+                    </span>
+                  </div>
+                  {/* Included employees + add-on */}
+                  {tier.includes && (
+                    <div style={{ marginTop: 10, display: 'flex', flexDirection: 'column', gap: 3 }}>
+                      <span style={{ fontSize: 12, color: tier.textDark ? '#475569' : 'rgba(255,255,255,0.6)', fontWeight: 600 }}>
+                        {tier.includes}
                       </span>
-                      <span style={{ fontSize: 13, color: tier.textDark ? '#94a3b8' : 'rgba(255,255,255,0.4)', marginBottom: 6 }}>
-                        {tier.unit}
+                      <span style={{ fontSize: 11, color: tier.textDark ? '#94a3b8' : 'rgba(255,255,255,0.35)' }}>
+                        {tier.addOn}
                       </span>
                     </div>
                   )}
                 </div>
 
                 {/* Features */}
-                <ul style={{ listStyle: 'none', margin: '0 0 24px', padding: 0, flex: 1, display: 'flex', flexDirection: 'column', gap: 8 }}>
+                <ul style={{ listStyle: 'none', margin: '16px 0 24px', padding: 0, flex: 1, display: 'flex', flexDirection: 'column', gap: 8 }}>
                   {tier.features.map(f => (
                     <li key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: 8 }}>
                       <span style={{
                         fontFamily: 'Anton, Impact, sans-serif', fontSize: 12,
                         color: tier.textDark ? TEAL : (tier.bg === TEAL ? AMBER : TEAL),
-                        flexShrink: 0,
+                        flexShrink: 0, marginTop: 1,
                       }}>—</span>
-                      <span style={{ fontSize: 13, color: tier.textDark ? '#475569' : 'rgba(255,255,255,0.55)', lineHeight: 1.45 }}>{f}</span>
+                      <span style={{ fontSize: 12, color: tier.textDark ? '#475569' : 'rgba(255,255,255,0.55)', lineHeight: 1.45 }}>{f}</span>
                     </li>
                   ))}
                 </ul>
@@ -197,6 +257,7 @@ export default function PricingV4() {
             </a>
           </div>
         </div>
+
       </div>
     </section>
   )
