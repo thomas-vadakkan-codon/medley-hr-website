@@ -320,12 +320,13 @@ export default function PricingV4() {
             transition={{ duration: 0.2 }}
             style={{ marginTop: 10, background: 'white', borderRadius: 18, border: BORDER, overflow: 'clip' }}
           >
-            {/* Table header — sticky */}
+            {/* Table header — sticky below nav */}
             <div style={{
               display: 'grid', gridTemplateColumns: '1fr 120px 120px 120px',
               borderBottom: BORDER,
-              position: 'sticky', top: 60, zIndex: 10,
+              position: 'sticky', top: 84, zIndex: 20,
               borderRadius: '18px 18px 0 0', overflow: 'hidden',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
             }}>
               <div style={{ padding: '16px 24px', background: 'white' }} />
               {['FREE', 'GROWTH', 'SCALE'].map((name, i) => (
@@ -344,10 +345,15 @@ export default function PricingV4() {
             {/* Sections */}
             {TABLE_SECTIONS.map((section, si) => (
               <div key={section.label}>
-                {/* Section label */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 120px 120px 120px', background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
+                {/* Section label — sticky below table header */}
+                <div style={{
+                  display: 'grid', gridTemplateColumns: '1fr 120px 120px 120px',
+                  background: '#f1f5f9', borderBottom: '1px solid #e2e8f0',
+                  borderTop: si > 0 ? '1px solid #e2e8f0' : 'none',
+                  position: 'sticky', top: 133, zIndex: 10,
+                }}>
                   <div style={{ padding: '10px 24px' }}>
-                    <span style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 11, letterSpacing: '0.1em', color: '#94a3b8' }}>
+                    <span style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 11, letterSpacing: '0.1em', color: '#64748b' }}>
                       {section.label.toUpperCase()}
                     </span>
                   </div>
