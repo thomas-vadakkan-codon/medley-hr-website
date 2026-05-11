@@ -326,7 +326,8 @@ export default function PricingV4() {
               borderBottom: BORDER,
               position: 'sticky', top: 84, zIndex: 20,
               borderRadius: '18px 18px 0 0', overflow: 'hidden',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+              background: 'white',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
             }}>
               <div style={{ padding: '16px 24px', background: 'white' }} />
               {['FREE', 'GROWTH', 'SCALE'].map((name, i) => (
@@ -351,6 +352,7 @@ export default function PricingV4() {
                   background: '#f1f5f9', borderBottom: '1px solid #e2e8f0',
                   borderTop: si > 0 ? '1px solid #e2e8f0' : 'none',
                   position: 'sticky', top: 133, zIndex: 10,
+                  boxShadow: '0 2px 6px rgba(0,0,0,0.06)',
                 }}>
                   <div style={{ padding: '10px 24px' }}>
                     <span style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 11, letterSpacing: '0.1em', color: '#64748b' }}>
