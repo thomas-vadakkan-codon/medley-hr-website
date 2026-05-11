@@ -34,7 +34,7 @@ const TIERS = [
     includes: '25 employees included',
     addOn: '₹80 / additional employee',
     highlights: [
-      'Everything in Free',
+      '25 employees included (₹80/additional)',
       'Full payroll & compliance',
       'Attendance, loans & reimbursements',
       'Workflow rules & audit trail',
@@ -51,7 +51,7 @@ const TIERS = [
     includes: '40 employees included',
     addOn: '₹100 / additional employee',
     highlights: [
-      'Everything in Growth',
+      '40 employees included (₹100/additional)',
       'Team status & escalations',
       'Direct bank integration',
       'Priority support & account manager',
