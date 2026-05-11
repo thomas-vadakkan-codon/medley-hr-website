@@ -17,8 +17,8 @@ const TIERS = [
     includes: null,
     addOn: null,
     highlights: [
-      'Unlimited employees & branches',
-      'Employee database',
+      'Unlimited employees',
+      'Unlimited branches',
       'Leave management',
       'Employee self-service portal',
     ],
@@ -80,7 +80,7 @@ const TABLE_SECTIONS = [
     label: 'People & HR',
     rows: [
       { feature: 'Employee database',                          free: true,  growth: true,  scale: true  },
-      { feature: 'Unlimited employees',                        free: true,  growth: true,  scale: true  },
+      { feature: 'Employees',                                  free: 'Unlimited', growth: '25 + ₹80/add', scale: '40 + ₹100/add' },
       { feature: 'Unlimited branches',                         free: true,  growth: true,  scale: true  },
       { feature: 'Offer letters & onboarding',                 free: false, growth: true,  scale: true  },
       { feature: 'Salary revision with audit trail',           free: false, growth: true,  scale: true  },
