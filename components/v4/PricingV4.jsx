@@ -318,15 +318,20 @@ export default function PricingV4() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2 }}
-            style={{ marginTop: 10, background: 'white', borderRadius: 18, border: BORDER, overflow: 'hidden' }}
+            style={{ marginTop: 10, background: 'white', borderRadius: 18, border: BORDER, overflow: 'clip' }}
           >
-            {/* Table header */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 120px 120px 120px', borderBottom: BORDER }}>
-              <div style={{ padding: '16px 24px' }} />
+            {/* Table header — sticky */}
+            <div style={{
+              display: 'grid', gridTemplateColumns: '1fr 120px 120px 120px',
+              borderBottom: BORDER,
+              position: 'sticky', top: 60, zIndex: 10,
+              borderRadius: '18px 18px 0 0', overflow: 'hidden',
+            }}>
+              <div style={{ padding: '16px 24px', background: 'white' }} />
               {['FREE', 'GROWTH', 'SCALE'].map((name, i) => (
                 <div key={name} style={{
                   padding: '16px 12px', textAlign: 'center',
-                  background: i === 1 ? TEAL : i === 2 ? DARK : 'transparent',
+                  background: i === 1 ? TEAL : i === 2 ? DARK : 'white',
                   borderLeft: BORDER,
                 }}>
                   <span style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 13, letterSpacing: '0.06em', color: i === 0 ? DARK : 'white' }}>
