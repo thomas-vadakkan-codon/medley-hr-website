@@ -49,7 +49,6 @@ export default function ProblemV4() {
               border: BORDER, padding: '36px 36px 40px', position: 'relative', overflow: 'hidden',
             }}
           >
-            <span style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 80, color: 'rgba(255,255,255,0.04)', position: 'absolute', top: -10, right: 24, lineHeight: 1 }}>01</span>
             <p style={{ fontSize: 11, fontWeight: 700, color: TEAL, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16 }}>/ 01</p>
             <h3 className="v4-display" style={{ fontSize: 'clamp(28px,3vw,42px)', color: 'white', margin: '0 0 14px' }}>
               Payslip Requests<br />Flooding Your<br /><span style={{ color: AMBER }}>Inbox.</span>

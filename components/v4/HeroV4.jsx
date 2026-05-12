@@ -64,18 +64,6 @@ export default function HeroV4() {
               minHeight: 400, overflow: 'hidden', position: 'relative',
             }}
           >
-            {/* Soft launch tag */}
-            <div style={{
-              display: 'inline-flex', alignItems: 'center', gap: 6,
-              padding: '5px 12px', background: DARK, borderRadius: 999,
-              width: 'fit-content', marginBottom: 28,
-            }}>
-              <div style={{ width: 6, height: 6, borderRadius: '50%', background: TEAL }} />
-              <span style={{ fontSize: 11, fontWeight: 700, color: 'white', letterSpacing: '0.06em' }}>
-                NOW IN SOFT LAUNCH
-              </span>
-            </div>
-
             {/* Massive headline */}
             <h1 className="v4-display" style={{
               fontSize: 'clamp(52px, 7vw, 96px)',

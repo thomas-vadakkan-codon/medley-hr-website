@@ -23,7 +23,7 @@ export default function FooterV4() {
               </span>
             </div>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.35)', lineHeight: 1.6, margin: '0 0 20px', maxWidth: 220 }}>
-              HR and payroll your team can own.
+              Built for teams who do it themselves.
             </p>
             <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.2)', margin: 0 }}>
               © 2026 MedleyHR

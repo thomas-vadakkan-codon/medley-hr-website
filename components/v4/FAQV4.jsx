@@ -109,6 +109,34 @@ export default function FAQV4() {
             ))}
           </div>
         </div>
+
+        {/* Closing callouts */}
+        <div className="v4-faq-callouts" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginTop: 10 }}>
+          <div style={{ background: DARK, borderRadius: 14, border: BORDER, padding: '24px 28px' }}>
+            <p style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 18, color: AMBER, margin: '0 0 8px', letterSpacing: '0.03em' }}>
+              COMING FROM ANOTHER HRMS?
+            </p>
+            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.65 }}>
+              Connect your previous payroll data and pick up right where you left off. Migration in days, not months.
+            </p>
+          </div>
+          <div style={{ background: 'white', borderRadius: 14, border: BORDER, padding: '24px 28px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div>
+              <p style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 18, color: DARK, margin: '0 0 8px', letterSpacing: '0.03em' }}>
+                NEED SOMETHING SPECIFIC?
+              </p>
+              <p style={{ fontSize: 13, color: '#64748b', margin: 0, lineHeight: 1.65 }}>
+                We build for our users. If something's missing from your workflow, raise a request — we listen.
+              </p>
+            </div>
+            <a href="mailto:hello@medleyhr.com" style={{
+              display: 'inline-block', marginTop: 16, fontSize: 13, fontWeight: 700,
+              color: TEAL, textDecoration: 'none',
+            }}>
+              Raise a request →
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   )

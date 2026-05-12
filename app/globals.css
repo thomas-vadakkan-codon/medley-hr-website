@@ -263,6 +263,7 @@ a {
 
   .v4-faq-grid { grid-template-columns: 1fr !important; }
   .v4-faq-left { border-right: none !important; border-bottom: 2px solid #0D0F14 !important; }
+  .v4-faq-callouts { grid-template-columns: 1fr !important; }
 
   .v4-finalcta-grid { grid-template-columns: 1fr !important; padding: 36px 24px !important; gap: 24px !important; }
 

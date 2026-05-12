@@ -54,7 +54,7 @@ export default function FoundersNoteV4() {
               {[
                 "We built MedleyHR for ourselves first. Every month, our team was drowning in payslip requests, leave emails, and appraisal spreadsheets. Things that should have taken minutes were taking hours.",
                 "We looked for a tool powerful enough to handle real payroll but simple enough to set up without a consultant. We couldn't find one. So we built it, ran it internally for a year, fixed what didn't work.",
-                "Now we're in soft launch — inviting other teams to try what's been working for us.",
+                "Now we're opening it up — built on a year of real use, and ready for your team.",
               ].map((p, i) => (
                 <p key={i} style={{
                   fontSize: i === 2 ? 16 : 15,
