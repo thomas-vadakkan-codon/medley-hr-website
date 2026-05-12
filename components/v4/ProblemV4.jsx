@@ -2,9 +2,7 @@
 import { motion } from 'framer-motion'
 
 const TEAL = '#0f9e8a'
-const AMBER = '#F5C518'
 const DARK = '#0D0F14'
-const BORDER = `2px solid ${DARK}`
 
 const PAINS = [
   { num: '01', title: 'Payslip requests flooding your inbox every month.', desc: "Employees email HR. HR digs through folders. Everyone wastes an hour they didn't have." },
@@ -16,7 +14,7 @@ const PAINS = [
 
 export default function ProblemV4() {
   return (
-    <section style={{ padding: '16px 16px', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
+    <section style={{ padding: '16px 16px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         {/* Section label row */}
         <div className="v4-problem-header" style={{
@@ -25,9 +23,9 @@ export default function ProblemV4() {
         }}>
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
-            padding: '6px 14px', background: DARK, borderRadius: 999,
+            padding: '6px 14px', background: 'var(--color-v4-dark)', borderRadius: 999,
           }}>
-            <span style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 12, color: AMBER, letterSpacing: '0.06em' }}>
+            <span style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 12, color: 'var(--color-v4-amber)', letterSpacing: '0.06em' }}>
               SOUND FAMILIAR?
             </span>
           </div>
@@ -45,13 +43,13 @@ export default function ProblemV4() {
             viewport={{ once: true }}
             className="v4-problem-large"
             style={{
-              gridColumn: '1 / 3', background: DARK, borderRadius: 18,
-              border: BORDER, padding: '36px 36px 40px', position: 'relative', overflow: 'hidden',
+              gridColumn: '1 / 3', background: 'var(--color-v4-dark)', borderRadius: 18,
+              border: 'var(--v4-border)', padding: '36px 36px 40px', position: 'relative', overflow: 'hidden',
             }}
           >
-            <p style={{ fontSize: 11, fontWeight: 700, color: TEAL, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16 }}>/ 01</p>
+            <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--color-v4-teal)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16 }}>/ 01</p>
             <h3 className="v4-display" style={{ fontSize: 'clamp(28px,3vw,42px)', color: 'white', margin: '0 0 14px' }}>
-              Payslip Requests<br />Flooding Your<br /><span style={{ color: AMBER }}>Inbox.</span>
+              Payslip Requests<br />Flooding Your<br /><span style={{ color: 'var(--color-v4-amber)' }}>Inbox.</span>
             </h3>
             <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.45)', lineHeight: 1.65, maxWidth: 360, margin: 0 }}>
               Employees email HR. HR digs through folders. Everyone wastes an hour they didn't have — every single month.
@@ -65,17 +63,17 @@ export default function ProblemV4() {
             viewport={{ once: true }}
             transition={{ delay: 0.07 }}
             style={{
-              background: AMBER, borderRadius: 18,
-              border: BORDER, padding: '28px',
+              background: 'var(--color-v4-amber)', borderRadius: 18,
+              border: 'var(--v4-border)', padding: '28px',
               display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
             }}
           >
-            <span style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 11, color: DARK, letterSpacing: '0.1em', opacity: 0.5 }}>/ 02</span>
+            <span style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 11, color: 'var(--color-v4-dark)', letterSpacing: '0.1em', opacity: 0.5 }}>/ 02</span>
             <div>
-              <h3 className="v4-display" style={{ fontSize: 28, color: DARK, margin: '0 0 12px' }}>
+              <h3 className="v4-display" style={{ fontSize: 28, color: 'var(--color-v4-dark)', margin: '0 0 12px' }}>
                 Appraisals on Excel.
               </h3>
-              <p style={{ fontSize: 13, color: DARK, opacity: 0.65, lineHeight: 1.6, margin: 0 }}>
+              <p style={{ fontSize: 13, color: 'var(--color-v4-dark)', opacity: 0.65, lineHeight: 1.6, margin: 0 }}>
                 Multiple versions. No audit trail.
               </p>
             </div>
@@ -91,7 +89,7 @@ export default function ProblemV4() {
               transition={{ delay: 0.1 + i * 0.07 }}
               style={{
                 background: i === 1 ? TEAL : 'white', borderRadius: 18,
-                border: BORDER, padding: '26px 28px',
+                border: 'var(--v4-border)', padding: '26px 28px',
               }}
             >
               <span style={{

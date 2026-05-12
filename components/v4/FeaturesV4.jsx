@@ -319,7 +319,7 @@ function BulletItem({ text, dark }) {
 
 export default function FeaturesV4() {
   return (
-    <div id="features" style={{ padding: '16px 16px', fontFamily: FF }}>
+    <div id="features" style={{ padding: '16px 16px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 10 }}>
       {FEATURES.map((f, i) => {
         const isDark = f.bg === DARK || f.bg === TEAL
@@ -342,7 +342,7 @@ export default function FeaturesV4() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            style={{ background: f.bg, borderRadius: 20, border: BORDER, overflow: 'hidden' }}
+            style={{ background: f.bg, borderRadius: 20, border: 'var(--v4-border)', overflow: 'hidden' }}
           >
             <div className="v4-feat-card-grid" style={{
               display: 'grid',
@@ -369,9 +369,9 @@ export default function FeaturesV4() {
                   {f.tagSpecial && (
                     <span style={{
                       display: 'inline-block', padding: '4px 12px',
-                      background: DARK, border: `1px solid ${DARK}`,
+                      background: 'var(--color-v4-dark)', border: `1px solid ${DARK}`,
                       borderRadius: 999, fontSize: 11, fontWeight: 700,
-                      color: AMBER, letterSpacing: '0.04em',
+                      color: 'var(--color-v4-amber)', letterSpacing: '0.04em',
                     }}>{f.tagSpecial}</span>
                   )}
                 </div>

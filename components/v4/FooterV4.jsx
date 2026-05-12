@@ -1,17 +1,11 @@
-const TEAL = '#0f9e8a'
-const AMBER = '#F5C518'
-const DARK = '#0D0F14'
-const BORDER = `2px solid ${DARK}`
-
 export default function FooterV4() {
   return (
     <footer style={{
       padding: '0 16px 16px',
-      fontFamily: 'Plus Jakarta Sans, sans-serif',
     }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <div className="v4-footer-grid" style={{
-          background: DARK, borderRadius: 20, border: BORDER,
+          background: 'var(--color-v4-dark)', borderRadius: 20, border: 'var(--v4-border)',
           padding: '44px 48px',
           display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 40,
         }}>
@@ -19,7 +13,7 @@ export default function FooterV4() {
           <div>
             <div style={{ marginBottom: 14 }}>
               <span style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 24, color: 'white', letterSpacing: '0.02em' }}>
-                MEDLEY<span style={{ color: TEAL }}>HR</span>
+                MEDLEY<span style={{ color: 'var(--color-v4-teal)' }}>HR</span>
               </span>
             </div>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.35)', lineHeight: 1.6, margin: '0 0 20px', maxWidth: 220 }}>
@@ -54,8 +48,8 @@ export default function FooterV4() {
             </ul>
             <a href="mailto:hello@medleyhr.com" style={{
               display: 'inline-block', padding: '8px 16px',
-              background: AMBER, border: `2px solid ${AMBER}`, borderRadius: 7,
-              fontSize: 12, fontWeight: 700, color: DARK, textDecoration: 'none', letterSpacing: '0.04em',
+              background: 'var(--color-v4-amber)', border: '2px solid var(--color-v4-amber)', borderRadius: 7,
+              fontSize: 12, fontWeight: 700, color: 'var(--color-v4-dark)', textDecoration: 'none', letterSpacing: '0.04em',
             }}>
               TALK TO US
             </a>

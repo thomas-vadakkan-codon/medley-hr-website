@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 const TEAL = '#0f9e8a'
 const AMBER = '#F5C518'
 const DARK = '#0D0F14'
-const BORDER = `2px solid ${DARK}`
 
 const TIERS = [
   {
@@ -166,28 +165,28 @@ export default function PricingV4() {
   const [tableOpen, setTableOpen] = useState(false)
 
   return (
-    <section id="pricing" style={{ padding: '16px 16px', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
+    <section id="pricing" style={{ padding: '16px 16px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
 
         {/* Header */}
         <div className="v4-pricing-header" style={{
-          background: AMBER, borderRadius: 18, border: BORDER,
+          background: 'var(--color-v4-amber)', borderRadius: 18, border: 'var(--v4-border)',
           padding: '32px 36px', marginBottom: 10,
           display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 20,
         }}>
           <div>
-            <h2 className="v4-display" style={{ fontSize: 'clamp(32px,4vw,56px)', color: DARK, margin: '0 0 8px' }}>
-              Transparent Pricing.<br /><span style={{ color: TEAL }}>No Surprises.</span>
+            <h2 className="v4-display" style={{ fontSize: 'clamp(32px,4vw,56px)', color: 'var(--color-v4-dark)', margin: '0 0 8px' }}>
+              Transparent Pricing.<br /><span style={{ color: 'var(--color-v4-teal)' }}>No Surprises.</span>
             </h2>
-            <p style={{ fontSize: 13, color: DARK, opacity: 0.6, margin: 0 }}>
+            <p style={{ fontSize: 13, color: 'var(--color-v4-dark)', opacity: 0.6, margin: 0 }}>
               Per organisation · Not per employee · Unlimited branches
             </p>
           </div>
           <div className="v4-pricing-header-right" style={{ display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'flex-end' }}>
-            <p style={{ fontSize: 13, color: DARK, opacity: 0.7, margin: 0, textAlign: 'right' }}>
+            <p style={{ fontSize: 13, color: 'var(--color-v4-dark)', opacity: 0.7, margin: 0, textAlign: 'right' }}>
               No setup fee. No implementation cost.<br />No contracts. Cancel anytime.
             </p>
-            <div style={{ display: 'inline-flex', background: DARK, borderRadius: 10, padding: 4 }}>
+            <div style={{ display: 'inline-flex', background: 'var(--color-v4-dark)', borderRadius: 10, padding: 4 }}>
               {[{ label: 'Monthly', val: false }, { label: 'Annual — 2 months free', val: true }].map(({ label, val }) => (
                 <button key={label} onClick={() => setAnnual(val)} style={{
                   padding: '7px 16px', borderRadius: 7,
@@ -217,7 +216,7 @@ export default function PricingV4() {
               {tier.badge && (
                 <div style={{
                   position: 'absolute', top: -14, left: '50%', transform: 'translateX(-50%)',
-                  background: AMBER, border: BORDER, borderRadius: 999,
+                  background: 'var(--color-v4-amber)', border: 'var(--v4-border)', borderRadius: 999,
                   padding: '4px 16px', whiteSpace: 'nowrap', zIndex: 1,
                 }}>
                   <span style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 11, color: DARK, letterSpacing: '0.08em' }}>
@@ -226,7 +225,7 @@ export default function PricingV4() {
                 </div>
               )}
               <div style={{
-                background: tier.bg, borderRadius: 18, border: BORDER,
+                background: tier.bg, borderRadius: 18, border: 'var(--v4-border)',
                 overflow: 'hidden', display: 'flex', flexDirection: 'column', height: '100%',
               }}>
 
@@ -282,7 +281,7 @@ export default function PricingV4() {
 
                 <a href="https://app.medleyhr.com/signup" style={{
                   display: 'block', textAlign: 'center', padding: '13px',
-                  background: tier.ctaBg, border: `2px solid ${DARK}`,
+                  background: tier.ctaBg, border: 'var(--v4-border)',
                   borderRadius: 10, fontSize: 13, fontWeight: 700, color: tier.ctaColor,
                   textDecoration: 'none', letterSpacing: '0.04em',
                   fontFamily: 'Plus Jakarta Sans, sans-serif',
@@ -303,8 +302,8 @@ export default function PricingV4() {
           onClick={() => setTableOpen(!tableOpen)}
           style={{
             width: '100%', marginTop: 10,
-            background: 'white', border: BORDER, borderRadius: 14,
-            padding: '16px 28px', fontSize: 13, fontWeight: 700, color: DARK,
+            background: 'white', border: 'var(--v4-border)', borderRadius: 14,
+            padding: '16px 28px', fontSize: 13, fontWeight: 700, color: 'var(--color-v4-dark)',
             cursor: 'pointer', fontFamily: 'Plus Jakarta Sans, sans-serif',
             letterSpacing: '0.03em', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
             position: 'sticky', top: 76, zIndex: 25,
@@ -321,7 +320,7 @@ export default function PricingV4() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2 }}
-            style={{ marginTop: 10, borderRadius: 18, border: BORDER, overflow: 'clip' }}
+            style={{ marginTop: 10, borderRadius: 18, border: 'var(--v4-border)', overflow: 'clip' }}
           >
             <table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: 0, background: 'white', borderRadius: 18 }}>
               {/* Sticky thead — border-collapse:separate is required for sticky to work */}
@@ -329,7 +328,7 @@ export default function PricingV4() {
                 <tr>
                   <th style={{
                     padding: '16px 24px', background: 'white', textAlign: 'left',
-                    borderBottom: BORDER,
+                    borderBottom: 'var(--v4-border)',
                     position: 'sticky', top: 144, zIndex: 20,
                     borderRadius: '16px 0 0 0',
                     boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
@@ -341,7 +340,7 @@ export default function PricingV4() {
                   ].map(col => (
                     <th key={col.name} style={{
                       padding: '16px 20px', textAlign: 'center', width: 120,
-                      background: col.bg, borderBottom: BORDER, borderLeft: BORDER,
+                      background: col.bg, borderBottom: 'var(--v4-border)', borderLeft: 'var(--v4-border)',
                       position: 'sticky', top: 144, zIndex: 20,
                       borderRadius: col.radius,
                       boxShadow: '0 4px 12px rgba(0,0,0,0.08)',

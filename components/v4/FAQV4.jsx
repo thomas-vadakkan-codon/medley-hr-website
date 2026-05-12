@@ -3,9 +3,6 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const TEAL = '#0f9e8a'
-const AMBER = '#F5C518'
-const DARK = '#0D0F14'
-const BORDER = `2px solid ${DARK}`
 
 const FAQS = [
   { q: 'Can you build something specific to our workflow?', a: "Yes. We build based on what our users ask for. If a feature's missing or a workflow doesn't fit, raise a request — we take it seriously. Email hello@medleyhr.com." },
@@ -20,16 +17,16 @@ export default function FAQV4() {
   const [open, setOpen] = useState(0)
 
   return (
-    <section id="faq" style={{ padding: '16px 16px', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
+    <section id="faq" style={{ padding: '16px 16px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <div className="v4-faq-grid" style={{
-          background: 'white', borderRadius: 20, border: BORDER, overflow: 'hidden',
+          background: 'white', borderRadius: 20, border: 'var(--v4-border)', overflow: 'hidden',
           display: 'grid', gridTemplateColumns: '340px 1fr',
         }}>
           {/* Left label */}
           <div className="v4-faq-left" style={{
-            background: TEAL, padding: '40px 36px',
-            borderRight: BORDER,
+            background: 'var(--color-v4-teal)', padding: '40px 36px',
+            borderRight: 'var(--v4-border)',
             display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
           }}>
             <div>
@@ -50,8 +47,8 @@ export default function FAQV4() {
             </div>
             <a href="mailto:hello@medleyhr.com" style={{
               display: 'inline-block', padding: '10px 18px',
-              background: AMBER, border: `2px solid ${DARK}`, borderRadius: 8,
-              fontSize: 13, fontWeight: 700, color: DARK, textDecoration: 'none',
+              background: 'var(--color-v4-amber)', border: 'var(--v4-border)', borderRadius: 8,
+              fontSize: 13, fontWeight: 700, color: 'var(--color-v4-dark)', textDecoration: 'none',
               letterSpacing: '0.04em', marginTop: 28, width: 'fit-content',
             }}>
               CONTACT US
@@ -71,7 +68,7 @@ export default function FAQV4() {
                     fontFamily: 'Plus Jakarta Sans, sans-serif',
                   }}
                 >
-                  <span style={{ fontSize: 15, fontWeight: 700, color: DARK, lineHeight: 1.35 }}>
+                  <span style={{ fontSize: 15, fontWeight: 700, color: 'var(--color-v4-dark)', lineHeight: 1.35 }}>
                     {faq.q}
                   </span>
                   <div style={{
@@ -112,17 +109,17 @@ export default function FAQV4() {
 
         {/* Closing callouts */}
         <div className="v4-faq-callouts" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginTop: 10 }}>
-          <div style={{ background: DARK, borderRadius: 14, border: BORDER, padding: '24px 28px' }}>
-            <p style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 18, color: AMBER, margin: '0 0 8px', letterSpacing: '0.03em' }}>
+          <div style={{ background: 'var(--color-v4-dark)', borderRadius: 14, border: 'var(--v4-border)', padding: '24px 28px' }}>
+            <p style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 18, color: 'var(--color-v4-amber)', margin: '0 0 8px', letterSpacing: '0.03em' }}>
               COMING FROM ANOTHER HRMS?
             </p>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.65 }}>
               Connect your previous payroll data and pick up right where you left off. Migration in days, not months.
             </p>
           </div>
-          <div style={{ background: 'white', borderRadius: 14, border: BORDER, padding: '24px 28px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div style={{ background: 'white', borderRadius: 14, border: 'var(--v4-border)', padding: '24px 28px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
-              <p style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 18, color: DARK, margin: '0 0 8px', letterSpacing: '0.03em' }}>
+              <p style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 18, color: 'var(--color-v4-dark)', margin: '0 0 8px', letterSpacing: '0.03em' }}>
                 NEED SOMETHING SPECIFIC?
               </p>
               <p style={{ fontSize: 13, color: '#64748b', margin: 0, lineHeight: 1.65 }}>
@@ -131,7 +128,7 @@ export default function FAQV4() {
             </div>
             <a href="mailto:hello@medleyhr.com" style={{
               display: 'inline-block', marginTop: 16, fontSize: 13, fontWeight: 700,
-              color: TEAL, textDecoration: 'none',
+              color: 'var(--color-v4-teal)', textDecoration: 'none',
             }}>
               Raise a request →
             </a>

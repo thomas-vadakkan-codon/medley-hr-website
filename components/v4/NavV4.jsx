@@ -1,9 +1,6 @@
 'use client'
 import { useState } from 'react'
 
-const TEAL = '#0f9e8a'
-const DARK = '#0D0F14'
-
 const NAV_LINKS = [
   { label: 'How it works', href: '#how-it-works' },
   { label: 'Features', href: '#features' },
@@ -19,12 +16,11 @@ export default function NavV4() {
     <nav style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50,
       padding: '12px 24px',
-      fontFamily: 'Plus Jakarta Sans, sans-serif',
     }}>
       {/* Nav pill */}
       <div style={{
         maxWidth: 1280, margin: '0 auto',
-        background: DARK, borderRadius: 14,
+        background: 'var(--color-v4-dark)', borderRadius: 14,
         padding: '0 24px', height: 52,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
@@ -34,7 +30,7 @@ export default function NavV4() {
             fontFamily: 'Anton, Impact, sans-serif',
             fontSize: 20, color: 'white', letterSpacing: '0.02em',
           }}>
-            MEDLEY<span style={{ color: TEAL }}>HR</span>
+            MEDLEY<span style={{ color: 'var(--color-v4-teal)' }}>HR</span>
           </span>
         </a>
 
@@ -59,7 +55,7 @@ export default function NavV4() {
           </a>
           <a href="https://app.medleyhr.com/signup" style={{
             padding: '8px 18px',
-            background: TEAL, borderRadius: 8,
+            background: 'var(--color-v4-teal)', borderRadius: 8,
             fontSize: 13, fontWeight: 700, color: 'white', textDecoration: 'none',
             letterSpacing: '0.02em',
           }}>
@@ -96,7 +92,7 @@ export default function NavV4() {
       {open && (
         <div className="v4-mobile-menu" style={{
           maxWidth: 1280, margin: '6px auto 0',
-          background: DARK, borderRadius: 14,
+          background: 'var(--color-v4-dark)', borderRadius: 14,
           padding: '16px 24px 20px',
           display: 'flex', flexDirection: 'column', gap: 0,
         }}>
@@ -123,7 +119,7 @@ export default function NavV4() {
             }}>Sign in</a>
             <a href="https://app.medleyhr.com/signup" style={{
               flex: 1, textAlign: 'center', padding: '10px 16px',
-              background: TEAL, borderRadius: 8,
+              background: 'var(--color-v4-teal)', borderRadius: 8,
               fontSize: 13, fontWeight: 700, color: 'white', textDecoration: 'none',
               letterSpacing: '0.02em',
             }}>START FOR FREE</a>

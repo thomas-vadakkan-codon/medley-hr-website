@@ -1,4 +1,5 @@
-import { Plus_Jakarta_Sans } from 'next/font/google'
+import { Plus_Jakarta_Sans, Anton } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -6,6 +7,13 @@ const plusJakarta = Plus_Jakarta_Sans({
   weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
   variable: '--font-plus-jakarta',
+})
+
+const anton = Anton({
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
+  variable: '--font-anton',
 })
 
 export const metadata = {
@@ -74,24 +82,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={plusJakarta.variable}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KF9738VGFV" />
-        <script dangerouslySetInnerHTML={{ __html: `
+    <html lang="en" className={`${plusJakarta.variable} ${anton.variable}`}>
+      <body
+        className="min-h-screen antialiased"
+      >
+        {children}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-KF9738VGFV" strategy="afterInteractive" />
+        <Script id="ga4-init" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-KF9738VGFV');
-        `}} />
-      </head>
-      <body
-        style={{ fontFamily: "'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" }}
-        className="min-h-screen antialiased"
-      >
-        {children}
+        `}</Script>
       </body>
     </html>
   )

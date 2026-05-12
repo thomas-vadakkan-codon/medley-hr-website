@@ -1,11 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
 
-const TEAL = '#0f9e8a'
-const AMBER = '#F5C518'
-const DARK = '#0D0F14'
-
-
 function CircleStamp() {
   return (
     <div style={{ position: 'relative', width: 120, height: 120, flexShrink: 0 }}>
@@ -27,7 +22,7 @@ function CircleStamp() {
       }}>
         <div style={{
           width: 60, height: 60, borderRadius: '50%',
-          background: TEAL,
+          background: 'var(--color-v4-teal)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}>
           <span style={{
@@ -44,7 +39,6 @@ export default function HeroV4() {
   return (
     <section style={{
       paddingTop: 90, paddingBottom: 16, paddingLeft: 16, paddingRight: 16,
-      fontFamily: 'Plus Jakarta Sans, sans-serif',
     }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         {/* Main bento row */}
@@ -57,8 +51,8 @@ export default function HeroV4() {
             transition={{ duration: 0.5 }}
             className="v4-hero-left"
             style={{
-              background: AMBER, borderRadius: 20,
-              border: `2px solid ${DARK}`,
+              background: 'var(--color-v4-amber)', borderRadius: 20,
+              border: 'var(--v4-border)',
               padding: '40px 44px 44px',
               display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
               minHeight: 400, overflow: 'hidden', position: 'relative',
@@ -67,12 +61,12 @@ export default function HeroV4() {
             {/* Massive headline */}
             <h1 className="v4-display" style={{
               fontSize: 'clamp(52px, 7vw, 96px)',
-              color: DARK, margin: 0, flex: 1,
+              color: 'var(--color-v4-dark)', margin: 0, flex: 1,
             }}>
               Your HR<br />
               Shouldn't<br />
               Live In<br />
-              Your <span style={{ color: TEAL }}>Inbox.</span>
+              Your <span style={{ color: 'var(--color-v4-teal)' }}>Inbox.</span>
             </h1>
 
             {/* Bottom row */}
@@ -81,7 +75,7 @@ export default function HeroV4() {
               marginTop: 40, gap: 24, flexWrap: 'wrap',
             }}>
               <p style={{
-                fontSize: 15, color: DARK, lineHeight: 1.55,
+                fontSize: 15, color: 'var(--color-v4-dark)', lineHeight: 1.55,
                 maxWidth: 340, opacity: 0.75, margin: 0,
               }}>
                 MedleyHR is a self-serve HRMS — sign up and run payroll without a consultant or a 3-month wait.
@@ -97,8 +91,8 @@ export default function HeroV4() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="v4-hero-right"
             style={{
-              background: DARK, borderRadius: 20,
-              border: `2px solid ${DARK}`,
+              background: 'var(--color-v4-dark)', borderRadius: 20,
+              border: 'var(--v4-border)',
               padding: '36px 28px',
               display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
             }}
@@ -106,7 +100,7 @@ export default function HeroV4() {
             <div>
               <p style={{
                 fontSize: 12, fontWeight: 700, letterSpacing: '0.1em',
-                color: TEAL, textTransform: 'uppercase', marginBottom: 16,
+                color: 'var(--color-v4-teal)', textTransform: 'uppercase', marginBottom: 16,
               }}>
                 What is MedleyHR?
               </p>
@@ -139,7 +133,7 @@ export default function HeroV4() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               <a href="https://app.medleyhr.com/signup" style={{
                 display: 'block', textAlign: 'center',
-                padding: '14px', background: TEAL, borderRadius: 10,
+                padding: '14px', background: 'var(--color-v4-teal)', borderRadius: 10,
                 fontSize: 14, fontWeight: 700, color: 'white', textDecoration: 'none',
                 letterSpacing: '0.04em',
               }}>
@@ -161,8 +155,8 @@ export default function HeroV4() {
 
         {/* Ticker strip */}
         <div style={{
-          background: TEAL, borderRadius: 12,
-          border: `2px solid ${DARK}`,
+          background: 'var(--color-v4-teal)', borderRadius: 12,
+          border: 'var(--v4-border)',
           padding: '12px 0', overflow: 'hidden',
         }}>
           <div className="marquee-v4" style={{ display: 'flex', gap: 48, width: 'max-content' }}>
@@ -171,7 +165,7 @@ export default function HeroV4() {
                 fontFamily: 'Anton, Impact, sans-serif',
                 fontSize: 14, color: 'white', whiteSpace: 'nowrap', letterSpacing: '0.06em',
               }}>
-                {t} <span style={{ color: AMBER, marginLeft: 12 }}>✦</span>
+                {t} <span style={{ color: 'var(--color-v4-amber)', marginLeft: 12 }}>✦</span>
               </span>
             ))}
           </div>

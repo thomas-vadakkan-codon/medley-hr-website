@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 const TEAL = '#0f9e8a'
 const AMBER = '#F5C518'
 const DARK = '#0D0F14'
-const BORDER = `2px solid ${DARK}`
 
 const STEPS = [
   { num: '01', title: 'Configure Your Org', desc: 'Set up departments, branches, salary components, and your pay schedule. Takes hours, not weeks.' },
@@ -14,16 +13,16 @@ const STEPS = [
 
 export default function HowItWorksV4() {
   return (
-    <section id="how-it-works" style={{ padding: '16px 16px', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
+    <section id="how-it-works" style={{ padding: '16px 16px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         {/* Header card */}
         <div className="v4-how-header" style={{
-          background: DARK, borderRadius: 18, border: BORDER,
+          background: 'var(--color-v4-dark)', borderRadius: 18, border: 'var(--v4-border)',
           padding: '28px 36px', marginBottom: 10,
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         }}>
           <h2 className="v4-display" style={{ fontSize: 'clamp(28px,4vw,52px)', color: 'white', margin: 0 }}>
-            Set Up In Hours.<br /><span style={{ color: AMBER }}>Run Payroll In Days.</span>
+            Set Up In Hours.<br /><span style={{ color: 'var(--color-v4-amber)' }}>Run Payroll In Days.</span>
           </h2>
           <div style={{
             padding: '6px 16px', border: `1px solid rgba(255,255,255,0.15)`,
@@ -44,14 +43,14 @@ export default function HowItWorksV4() {
               transition={{ delay: i * 0.1 }}
               style={{
                 background: i === 1 ? TEAL : 'white',
-                borderRadius: 18, border: BORDER,
+                borderRadius: 18, border: 'var(--v4-border)',
                 padding: '32px 28px 36px', overflow: 'hidden', position: 'relative',
               }}
             >
               <div style={{
                 width: 36, height: 36, borderRadius: '50%',
                 background: i === 1 ? 'rgba(255,255,255,0.2)' : AMBER,
-                border: `2px solid ${DARK}`,
+                border: 'var(--v4-border)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 marginBottom: 28,
               }}>

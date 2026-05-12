@@ -65,6 +65,12 @@
   /* Typography */
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 
+  /* V4 brand palette */
+  --color-v4-teal: #0f9e8a;
+  --color-v4-amber: #F5C518;
+  --color-v4-dark: #0D0F14;
+  --color-v4-page-bg: #F0F4F1;
+
   /* Spacing multipliers (8pt grid) */
   --space-1: 8px;
   --space-2: 16px;
@@ -75,6 +81,10 @@
   --space-8: 64px;
   --space-10: 80px;
   --space-12: 96px;
+}
+
+:root {
+  --v4-border: 2px solid var(--color-v4-dark);
 }
 
 *, *::before, *::after {
@@ -90,10 +100,12 @@ html {
 body {
   background-color: #f8fafb;
   color: #0f172a;
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-plus-jakarta, 'Plus Jakarta Sans'), system-ui, -apple-system, sans-serif;
   font-size: 16px;
   line-height: 1.6;
 }
+
+button, input, select, textarea { font-family: inherit; }
 
 /* Ensure nav links don't reflow during scroll */
 a {
@@ -182,7 +194,7 @@ a {
 
 /* Focus ring — accessible but not intrusive */
 :focus-visible {
-  outline: 2px solid #0f9e8a;
+  outline: 2px solid var(--color-v4-teal);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -203,8 +215,12 @@ a {
    V4 DESIGN SYSTEM
 ═══════════════════════════════════════ */
 
+.v4-page-canvas {
+  background-color: var(--color-v4-page-bg);
+}
+
 .v4-display {
-  font-family: 'Anton', Impact, sans-serif;
+  font-family: var(--font-anton, 'Anton'), Impact, sans-serif;
   font-weight: 400;
   letter-spacing: -0.01em;
   line-height: 0.95;

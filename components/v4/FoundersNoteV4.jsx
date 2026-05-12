@@ -1,14 +1,9 @@
 'use client'
 import { motion } from 'framer-motion'
 
-const TEAL = '#0f9e8a'
-const AMBER = '#F5C518'
-const DARK = '#0D0F14'
-const BORDER = `2px solid ${DARK}`
-
 export default function FoundersNoteV4() {
   return (
-    <section id="why-medleyhr" style={{ padding: '16px 16px', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
+    <section id="why-medleyhr" style={{ padding: '16px 16px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -16,7 +11,7 @@ export default function FoundersNoteV4() {
           viewport={{ once: true }}
           className="v4-founders-grid"
           style={{
-            background: DARK, borderRadius: 20, border: BORDER,
+            background: 'var(--color-v4-dark)', borderRadius: 20, border: 'var(--v4-border)',
             display: 'grid', gridTemplateColumns: '1fr 1.6fr', overflow: 'hidden',
           }}
         >
@@ -40,12 +35,12 @@ export default function FoundersNoteV4() {
                 color: 'white', margin: '0 0 8px',
               }}>
                 Why We Built<br />
-                <span style={{ color: AMBER }}>MedleyHR</span>
+                <span style={{ color: 'var(--color-v4-amber)' }}>MedleyHR</span>
               </h2>
             </div>
 
             {/* Accent line */}
-            <div style={{ width: 48, height: 3, background: TEAL, borderRadius: 2, marginTop: 40 }} />
+            <div style={{ width: 48, height: 3, background: 'var(--color-v4-teal)', borderRadius: 2, marginTop: 40 }} />
           </div>
 
           {/* Right — story */}
@@ -68,8 +63,8 @@ export default function FoundersNoteV4() {
             </div>
             <a href="https://app.medleyhr.com/signup" style={{
               display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 32,
-              padding: '12px 24px', background: AMBER, border: `2px solid ${DARK}`,
-              borderRadius: 9, fontSize: 13, fontWeight: 700, color: DARK,
+              padding: '12px 24px', background: 'var(--color-v4-amber)', border: 'var(--v4-border)',
+              borderRadius: 9, fontSize: 13, fontWeight: 700, color: 'var(--color-v4-dark)',
               textDecoration: 'none', letterSpacing: '0.04em',
               fontFamily: 'Plus Jakarta Sans, sans-serif', width: 'fit-content',
             }}>
