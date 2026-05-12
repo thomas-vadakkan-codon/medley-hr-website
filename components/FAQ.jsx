@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import ContactModal from './ContactModal'
 
 const TEAL = '#0f9e8a'
 
@@ -15,6 +16,7 @@ const FAQS = [
 
 export default function FAQ() {
   const [open, setOpen] = useState(0)
+  const [modalOpen, setModalOpen] = useState(false)
 
   return (
     <section id="faq" style={{ padding: '16px 16px' }}>
@@ -45,14 +47,16 @@ export default function FAQ() {
                 Something not here? We reply the same day.
               </p>
             </div>
-            <a href="mailto:hello@medleyhr.com" style={{
+
+            <button onClick={() => setModalOpen(true)} style={{
               display: 'inline-block', padding: '10px 18px',
               background: 'var(--color-v4-amber)', border: 'var(--v4-border)', borderRadius: 8,
               fontSize: 13, fontWeight: 700, color: 'var(--color-v4-dark)', textDecoration: 'none',
               letterSpacing: '0.04em', marginTop: 28, width: 'fit-content',
+              cursor: 'pointer', fontFamily: 'inherit',
             }}>
               CONTACT US
-            </a>
+            </button>
           </div>
 
           {/* Right accordion */}
@@ -126,15 +130,19 @@ export default function FAQ() {
                 We build for our users. If something's missing from your workflow, raise a request — we listen.
               </p>
             </div>
-            <a href="mailto:hello@medleyhr.com" style={{
+            <button onClick={() => setModalOpen(true)} style={{
               display: 'inline-block', marginTop: 16, fontSize: 13, fontWeight: 700,
               color: 'var(--color-v4-teal)', textDecoration: 'none',
+              background: 'none', border: 'none', cursor: 'pointer',
+              padding: 0, fontFamily: 'inherit', textAlign: 'left',
             }}>
               Raise a request →
-            </a>
+            </button>
           </div>
         </div>
       </div>
+
+      <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   )
 }

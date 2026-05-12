@@ -1,8 +1,12 @@
+'use client'
+import { useState } from 'react'
+import ContactModal from './ContactModal'
+
 export default function Footer() {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
-    <footer style={{
-      padding: '0 16px 16px',
-    }}>
+    <footer style={{ padding: '0 16px 16px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <div className="v4-footer-grid" style={{
           background: 'var(--color-v4-dark)', borderRadius: 20, border: 'var(--v4-border)',
@@ -46,16 +50,19 @@ export default function Footer() {
                 <li key={label}><a href={href} style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', fontWeight: 500, textDecoration: 'none' }}>{label}</a></li>
               ))}
             </ul>
-            <a href="mailto:hello@medleyhr.com" style={{
+            <button onClick={() => setModalOpen(true)} style={{
               display: 'inline-block', padding: '8px 16px',
               background: 'var(--color-v4-amber)', border: '2px solid var(--color-v4-amber)', borderRadius: 7,
-              fontSize: 12, fontWeight: 700, color: 'var(--color-v4-dark)', textDecoration: 'none', letterSpacing: '0.04em',
+              fontSize: 12, fontWeight: 700, color: 'var(--color-v4-dark)', letterSpacing: '0.04em',
+              cursor: 'pointer', fontFamily: 'inherit',
             }}>
               TALK TO US
-            </a>
+            </button>
           </div>
         </div>
       </div>
+
+      <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </footer>
   )
 }
