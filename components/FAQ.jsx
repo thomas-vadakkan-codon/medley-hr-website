@@ -13,7 +13,7 @@ const FAQS = [
   { q: 'Can MedleyHR handle multiple offices?', a: "Yes. Multi-branch on Growth and Scale plans — separate departments, locations, pay schedules, one organisation." },
 ]
 
-export default function FAQV4() {
+export default function FAQ() {
   const [open, setOpen] = useState(0)
 
   return (

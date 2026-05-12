@@ -83,9 +83,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${plusJakarta.variable} ${anton.variable}`}>
-      <body
-        className="min-h-screen antialiased"
-      >
+      <body className="v4-page-canvas min-h-screen antialiased">
         {children}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-KF9738VGFV" strategy="afterInteractive" />
         <Script id="ga4-init" strategy="afterInteractive">{`

@@ -11,7 +11,7 @@ const STEPS = [
   { num: '03', title: 'Run Payroll', desc: 'Review, approve, download bank advice — or pay directly. Done.' },
 ]
 
-export default function HowItWorksV4() {
+export default function HowItWorks() {
   return (
     <section id="how-it-works" style={{ padding: '16px 16px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>

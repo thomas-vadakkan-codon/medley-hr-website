@@ -317,7 +317,7 @@ function BulletItem({ text, dark }) {
   )
 }
 
-export default function FeaturesV4() {
+export default function Features() {
   return (
     <div id="features" style={{ padding: '16px 16px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 10 }}>

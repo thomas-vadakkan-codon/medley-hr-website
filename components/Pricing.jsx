@@ -160,7 +160,7 @@ function Check({ val, teal }) {
   return <span style={{ fontSize: 12, fontWeight: 700, color: teal ? TEAL : DARK }}>{val}</span>
 }
 
-export default function PricingV4() {
+export default function Pricing() {
   const [annual, setAnnual] = useState(false)
   const [tableOpen, setTableOpen] = useState(false)
 

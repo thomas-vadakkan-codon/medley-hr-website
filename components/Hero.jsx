@@ -35,7 +35,7 @@ function CircleStamp() {
   )
 }
 
-export default function HeroV4() {
+export default function Hero() {
   return (
     <section style={{
       paddingTop: 90, paddingBottom: 16, paddingLeft: 16, paddingRight: 16,

@@ -1,4 +1,4 @@
-export default function FooterV4() {
+export default function Footer() {
   return (
     <footer style={{
       padding: '0 16px 16px',

@@ -12,7 +12,7 @@ const PAINS = [
   { num: '05', title: "Your team is growing. Your HR tools aren't.", desc: '5 employees was fine on spreadsheets. At 25, everything is falling apart.' },
 ]
 
-export default function ProblemV4() {
+export default function Problem() {
   return (
     <section style={{ padding: '16px 16px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>

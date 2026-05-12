@@ -1,7 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 
-export default function FoundersNoteV4() {
+export default function FoundersNote() {
   return (
     <section id="why-medleyhr" style={{ padding: '16px 16px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>

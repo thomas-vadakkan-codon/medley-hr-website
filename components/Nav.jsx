@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { label: 'FAQ', href: '#faq' },
 ]
 
-export default function NavV4() {
+export default function Nav() {
   const [open, setOpen] = useState(false)
 
   return (

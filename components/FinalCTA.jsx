@@ -1,7 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 
-export default function FinalCTAV4() {
+export default function FinalCTA() {
   return (
     <section style={{ padding: '16px 16px 24px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
