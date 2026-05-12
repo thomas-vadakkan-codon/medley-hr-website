@@ -1,5 +1,5 @@
 import { Plus_Jakarta_Sans, Anton } from 'next/font/google'
-import Script from 'next/script'
+import CookieBanner from '@/components/CookieBanner'
 import './globals.css'
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -91,13 +91,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${plusJakarta.variable} ${anton.variable}`}>
       <body className="v4-page-canvas min-h-screen antialiased">
         {children}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-KF9738VGFV" strategy="afterInteractive" />
-        <Script id="ga4-init" strategy="afterInteractive">{`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-KF9738VGFV');
-        `}</Script>
+        <CookieBanner />
       </body>
     </html>
   )
