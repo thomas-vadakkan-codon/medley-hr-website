@@ -23,15 +23,9 @@ const organizationSchema = {
   name: 'MedleyHR',
   legalName: 'Codonsoft Technologies',
   url: 'https://medleyhr.com',
-  logo: {
-    '@type': 'ImageObject',
-    url: 'https://medleyhr.com/og-image.png',
-    width: 1200,
-    height: 630,
-  },
   email: 'hello@medleyhr.com',
   description:
-    'MedleyHR is a self-serve HR and payroll management platform built for Indian businesses. It enables companies to run payroll, manage leaves, track attendance, and stay compliant with Indian labour law — without a consultant.',
+    'MedleyHR is a self-serve HR and payroll management platform for businesses worldwide. It enables companies to run payroll, manage leaves, track attendance, and stay compliant — without a consultant.',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Bengaluru',
@@ -39,7 +33,18 @@ const organizationSchema = {
     addressCountry: 'IN',
   },
   foundingLocation: { '@type': 'Place', name: 'Bengaluru, India' },
-  areaServed: { '@type': 'Country', name: 'India' },
+  areaServed: [
+    { '@type': 'Country', name: 'India' },
+    { '@type': 'Country', name: 'United States' },
+    { '@type': 'Country', name: 'United Kingdom' },
+    { '@type': 'Country', name: 'United Arab Emirates' },
+    { '@type': 'Country', name: 'Saudi Arabia' },
+    { '@type': 'Country', name: 'Singapore' },
+    { '@type': 'Country', name: 'Australia' },
+    { '@type': 'AdministrativeArea', name: 'Middle East' },
+    { '@type': 'AdministrativeArea', name: 'Southeast Asia' },
+    { '@type': 'AdministrativeArea', name: 'Africa' },
+  ],
   sameAs: [],
 }
 
@@ -54,7 +59,7 @@ const softwareSchema = {
   operatingSystem: 'Web, iOS, Android',
   browserRequirements: 'Requires JavaScript. Requires HTML5.',
   description:
-    'Self-serve HR and payroll software for Indian businesses. Handles payroll, leaves, attendance, PF, ESI, TDS, Form 16, and employee self-service — without an implementation consultant.',
+    'Self-serve HR and payroll software for businesses worldwide. Handles payroll, leaves, attendance, India statutory compliance (PF, ESI, TDS, Form 16), and employee self-service — without an implementation consultant.',
   featureList: [
     'Payroll automation',
     'India statutory compliance — PF, ESI, TDS, PT, Form 16',
@@ -67,14 +72,15 @@ const softwareSchema = {
     'Team status module',
     'Direct bank integration',
     'Custom salary components',
+    'Custom payslip fields',
+    'Multi-region pricing',
   ].join(', '),
-  screenshot: 'https://medleyhr.com/og-image.png',
   provider: { '@id': 'https://medleyhr.com/#organization' },
   offers: [
     {
       '@type': 'Offer',
-      name: 'Starter',
-      description: 'Core HR for up to 10 employees — free forever.',
+      name: 'FREE',
+      description: 'Core HR for up to 10 employees — free forever. No credit card needed.',
       price: '0',
       priceCurrency: 'INR',
       priceSpecification: {
@@ -82,6 +88,7 @@ const softwareSchema = {
         price: '0',
         priceCurrency: 'INR',
         referenceQuantity: { '@type': 'QuantitativeValue', value: '1', unitCode: 'MON' },
+        unitText: 'per organisation per month',
       },
       eligibleQuantity: { '@type': 'QuantitativeValue', maxValue: 10, unitText: 'employees' },
       url: 'https://app.medleyhr.com/signup',
@@ -89,30 +96,30 @@ const softwareSchema = {
     {
       '@type': 'Offer',
       name: 'Growth',
-      description: 'Full payroll suite for growing teams — ₹35 per employee per month.',
-      price: '35',
+      description: 'Full payroll and HR operations. ₹1,999 per organisation per month (India) — 25 employees included, ₹80 per additional employee.',
+      price: '1999',
       priceCurrency: 'INR',
       priceSpecification: {
         '@type': 'UnitPriceSpecification',
-        price: '35',
+        price: '1999',
         priceCurrency: 'INR',
         referenceQuantity: { '@type': 'QuantitativeValue', value: '1', unitCode: 'MON' },
-        unitText: 'per employee per month',
+        unitText: 'per organisation per month',
       },
       url: 'https://app.medleyhr.com/signup',
     },
     {
       '@type': 'Offer',
       name: 'Scale',
-      description: 'Everything in Growth plus team status, bank integration, and dedicated support — ₹55 per employee per month.',
-      price: '55',
+      description: 'Everything in Growth plus team ops, bank integration, and dedicated support. ₹3,999 per organisation per month (India) — 40 employees included, ₹100 per additional employee.',
+      price: '3999',
       priceCurrency: 'INR',
       priceSpecification: {
         '@type': 'UnitPriceSpecification',
-        price: '55',
+        price: '3999',
         priceCurrency: 'INR',
         referenceQuantity: { '@type': 'QuantitativeValue', value: '1', unitCode: 'MON' },
-        unitText: 'per employee per month',
+        unitText: 'per organisation per month',
       },
       url: 'https://app.medleyhr.com/signup',
     },
@@ -176,7 +183,7 @@ const faqSchema = {
       name: 'How much does MedleyHR cost?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'MedleyHR is free for up to 10 employees (Starter plan). The Growth plan costs ₹35 per employee per month (₹29 billed annually). The Scale plan costs ₹55 per employee per month (₹46 billed annually). No setup fee, no implementation cost, no contracts.',
+        text: 'MedleyHR is free for up to 10 employees (FREE plan — no credit card needed). The Growth plan is ₹1,999 per organisation per month (India), with 25 employees included and ₹80 per additional employee. The Scale plan is ₹3,999 per organisation per month (India), with 40 employees included and ₹100 per additional employee. Annual billing saves 2 months. Pricing is region-specific — US/Europe, Middle East, Asia, and Africa have separate rates. No setup fee, no implementation cost, no contracts.',
       },
     },
     {
@@ -184,7 +191,15 @@ const faqSchema = {
       name: 'What is MedleyHR?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'MedleyHR is a self-serve HR and payroll management platform built for Indian businesses. It lets companies run payroll, manage leaves, track attendance, and stay compliant with Indian labour law — including PF, ESI, TDS, and Form 16 — without an implementation consultant.',
+        text: 'MedleyHR is a self-serve HR and payroll management platform for businesses worldwide, with a focus on Indian compliance. It lets companies run payroll, manage leaves, track attendance, and stay compliant with Indian labour law — including PF, ESI, TDS, and Form 16 — without an implementation consultant.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is MedleyHR available outside India?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. MedleyHR is available globally with region-specific pricing. Pricing tiers cover India, US and Europe, the Middle East, Asia and the rest of the world, and Africa. The platform automatically shows prices based on your location.',
       },
     },
   ],
