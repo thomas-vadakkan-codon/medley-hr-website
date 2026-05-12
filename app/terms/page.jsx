@@ -1,5 +1,5 @@
-import NavV4 from '@/components/v4/NavV4'
-import FooterV4 from '@/components/v4/FooterV4'
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
 
 const TEAL = '#0f9e8a'
 const AMBER = '#F5C518'
@@ -120,7 +120,7 @@ const SECTIONS = [
 export default function TermsPage() {
   return (
     <div style={{ background: '#F0F4F1', minHeight: '100vh', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
-      <NavV4 />
+      <Nav />
 
       {/* Hero — paddingTop offsets fixed nav */}
       <div style={{ padding: '90px 16px 0' }}>
@@ -195,7 +195,7 @@ export default function TermsPage() {
         </div>
       </div>
 
-      <FooterV4 />
+      <Footer />
     </div>
   )
 }
