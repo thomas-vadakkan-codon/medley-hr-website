@@ -34,8 +34,14 @@ export default function Footer() {
               PRODUCT
             </p>
             <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-              {['Features', 'Pricing', 'Why MedleyHR', 'For Teams', 'Sign in'].map(l => (
-                <li key={l}><a href="#" style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', fontWeight: 500, textDecoration: 'none' }}>{l}</a></li>
+              {[
+                { label: 'Features',     href: '/#features' },
+                { label: 'Pricing',      href: '/#pricing' },
+                { label: 'Why MedleyHR', href: '/#why-medleyhr' },
+                { label: 'FAQ',          href: '/#faq' },
+                { label: 'Sign in',      href: 'https://app.medleyhr.com/login' },
+              ].map(({ label, href }) => (
+                <li key={label}><a href={href} style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', fontWeight: 500, textDecoration: 'none' }}>{label}</a></li>
               ))}
             </ul>
           </div>

@@ -1,10 +1,10 @@
 # MedleyHR
 
-> MedleyHR is a self-serve HR and payroll management platform built specifically for Indian businesses. It lets any company run payroll, manage leaves, track attendance, and stay compliant with Indian labour law — without an implementation consultant or a months-long setup.
+> MedleyHR is a self-serve HR and payroll management platform for businesses worldwide, built with India-first compliance. It lets any company run payroll, manage leaves, track attendance, and stay compliant — without an implementation consultant or a months-long setup.
 
 ## What is MedleyHR?
 
-MedleyHR is an HRMS (Human Resource Management System) operated by Codonsoft Technologies, Bengaluru, India. It is designed for Indian companies of all sizes — from 5-person startups to multi-branch enterprises — who want to own their HR operations without depending on consultants or spreadsheets.
+MedleyHR is an HRMS (Human Resource Management System) operated by Codonsoft Technologies, Bengaluru, India. It is designed for businesses of all sizes — from 5-person startups to multi-branch enterprises — who want to own their HR operations without depending on consultants or spreadsheets.
 
 The platform is fully self-serve: sign up, configure, and run your first payroll on the same day. Most teams complete setup in under a few hours.
 
@@ -18,18 +18,40 @@ The platform is fully self-serve: sign up, configure, and run your first payroll
 - **Loans and reimbursements**: Manage salary advances and expense reimbursements within the payroll cycle.
 - **Salary revision approvals**: Structured workflow for salary changes with approval chains.
 - **Multi-branch reporting**: Manage multiple office locations, departments, and pay schedules under one organisation.
+- **Custom payslip fields**: Configurable payslip components to match any regional or organisational requirement.
 - **Team status module**: Real-time visibility into team availability and escalation management (Scale plan).
 - **Direct bank integration**: Disburse salaries directly to employee bank accounts (Scale plan).
 
 ## Pricing
 
-MedleyHR offers three plans, billed per employee per month:
+MedleyHR is priced per organisation per month — not per employee. Each plan includes a set number of employees, with a flat add-on rate for additional headcount.
 
-- **Starter** — Free, for up to 10 employees. Includes core HR, payslip generation, leave management, employee self-service, and basic reports. No credit card required.
-- **Growth** — ₹35/employee/month (₹29 billed annually). Full payroll suite with approval workflows, attendance, loans and reimbursements, Form 16 and TDS, salary revision approvals, and multi-branch reporting. 2 months free on annual billing.
-- **Scale** — ₹55/employee/month (₹46 billed annually). Everything in Growth plus team status module, escalation management, direct bank integration, custom salary components, priority support, and a dedicated account manager. 2 months free on annual billing.
+### India (INR)
+- **FREE** — ₹0/month. Up to 10 employees. Core HR, payslip generation, leave management, employee self-service, and basic reports. No credit card required. Always free.
+- **Growth** — ₹1,999/organisation/month (₹1,666 billed annually). 25 employees included. ₹80 per additional employee. Full payroll, compliance, attendance, loans, reimbursements, and approval workflows.
+- **Scale** — ₹3,999/organisation/month (₹3,332 billed annually). 40 employees included. ₹100 per additional employee. Everything in Growth plus team status, bank integration, custom reports, and dedicated account manager.
 
-All prices are in Indian Rupees (INR), exclusive of GST. No setup fee. No implementation cost. No contracts.
+### US / Europe (USD)
+- **FREE** — $0/month. Up to 10 employees.
+- **Growth** — $99/organisation/month ($83 billed annually). 25 employees included. $4 per additional employee.
+- **Scale** — $199/organisation/month ($166 billed annually). 40 employees included. $5 per additional employee.
+
+### Middle East (USD)
+- **FREE** — $0/month. Up to 10 employees.
+- **Growth** — $74/organisation/month ($62 billed annually). 25 employees included. $3 per additional employee.
+- **Scale** — $159/organisation/month ($133 billed annually). 40 employees included. $4 per additional employee.
+
+### Asia & Rest of World (USD)
+- **FREE** — $0/month. Up to 10 employees.
+- **Growth** — $49/organisation/month ($41 billed annually). 25 employees included. $2 per additional employee.
+- **Scale** — $119/organisation/month ($99 billed annually). 40 employees included. $3 per additional employee.
+
+### Africa (USD)
+- **FREE** — $0/month. Up to 10 employees.
+- **Growth** — $24/organisation/month ($20 billed annually). 25 employees included. $1 per additional employee.
+- **Scale** — $40/organisation/month ($33 billed annually). 40 employees included. $1 per additional employee.
+
+Annual billing saves 2 months across all plans and regions. No setup fee. No implementation cost. No contracts. Cancel anytime. Pricing is shown automatically based on the visitor's location.
 
 ## Who Uses MedleyHR?
 
@@ -38,6 +60,7 @@ MedleyHR is built for:
 - HR managers who want to run payroll without depending on an external consultant
 - Finance teams that need India-compliant statutory filings automated
 - Multi-location businesses that need centralised HR across branches
+- Global teams looking for affordable, self-serve HRMS with regional pricing
 
 ## Frequently Asked Questions
 
@@ -56,6 +79,12 @@ Yes. 256-bit SSL encryption, role-based access controls, and regular security au
 **Can MedleyHR handle multiple offices?**
 Yes. Multi-branch support is available on the Growth and Scale plans, with separate departments, locations, and pay schedules under one organisation.
 
+**Is MedleyHR available outside India?**
+Yes. MedleyHR is available globally with region-specific pricing covering India, US and Europe, the Middle East, Asia and the rest of the world, and Africa. Pricing is shown automatically based on the visitor's location.
+
+**How much does MedleyHR cost?**
+MedleyHR is free for up to 10 employees (FREE plan — no credit card needed). Paid plans are priced per organisation per month, not per employee. In India: Growth is ₹1,999/month (25 employees included) and Scale is ₹3,999/month (40 employees included). Pricing varies by region — see medleyhr.com for your local price.
+
 ## Company Information
 
 - **Product**: MedleyHR
@@ -65,7 +94,7 @@ Yes. Multi-branch support is available on the Growth and Scale plans, with separ
 - **Website**: https://medleyhr.com
 - **Sign up**: https://app.medleyhr.com/signup
 
-## Optional: Full documentation
+## Legal
 
 - Terms of Service: https://medleyhr.com/terms
 - Privacy Policy: https://medleyhr.com/privacy
