@@ -284,6 +284,10 @@ a {
   .v4-finalcta-grid { grid-template-columns: 1fr !important; padding: 36px 24px !important; gap: 24px !important; }
 
   .v4-footer-grid { grid-template-columns: 1fr !important; padding: 32px 24px !important; }
+
+  /* ── Pricing comparison table — swap to mobile version ── */
+  .pricing-table-desktop { display: none !important; }
+  .pricing-table-mobile  { display: block !important; }
 }
 
 /* ── Tablet (768px – 1023px) ────────── */
@@ -314,6 +318,10 @@ a {
 
   .v4-footer-grid { grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
 }
+
+/* ── Pricing comparison table ─────────── */
+.pricing-table-wrap { overflow: clip; }
+.pricing-table-mobile { display: none; }
 
 /* ── Contact Modal ───────────────────── */
 

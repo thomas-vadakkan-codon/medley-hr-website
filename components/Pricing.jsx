@@ -379,12 +379,13 @@ export default function Pricing() {
           <span style={{ fontSize: 16, transform: tableOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s', display: 'inline-block' }}>↓</span>
         </button>
 
-        {/* Full comparison table */}
+        {/* Full comparison table — desktop / tablet */}
         {tableOpen && (
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2 }}
+            className="pricing-table-desktop"
             style={{ marginTop: 10, borderRadius: 18, border: 'var(--v4-border)', overflow: 'clip' }}
           >
             <table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: 0, background: 'white', borderRadius: 18 }}>
@@ -451,6 +452,107 @@ export default function Pricing() {
                               borderLeft: '1px solid #f1f5f9',
                               borderBottom: rowBorder,
                               borderRadius: isLastRow && ci === 2 ? '0 0 16px 0' : 0,
+                              verticalAlign: 'middle',
+                            }}>
+                              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                <Check val={val} teal={ci === 1} />
+                              </div>
+                            </td>
+                          ))}
+                        </tr>
+                      )
+                    })}
+                  </>
+                ))}
+              </tbody>
+            </table>
+          </motion.div>
+        )}
+
+        {/* Full comparison table — mobile (horizontal scroll) */}
+        {tableOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+            className="pricing-table-mobile"
+            style={{
+              marginTop: 10, borderRadius: 18, border: 'var(--v4-border)',
+              overflowX: 'auto', overflowY: 'visible',
+              WebkitOverflowScrolling: 'touch',
+            }}
+          >
+            <table style={{ minWidth: 480, borderCollapse: 'separate', borderSpacing: 0, background: 'white', borderRadius: 18 }}>
+              <thead>
+                <tr>
+                  <th style={{
+                    padding: '12px 14px', background: 'white', textAlign: 'left',
+                    borderBottom: 'var(--v4-border)',
+                    position: 'sticky', left: 0, zIndex: 20,
+                    boxShadow: '2px 0 6px rgba(0,0,0,0.06)',
+                    minWidth: 140,
+                  }} />
+                  {[
+                    { name: 'FREE',   bg: 'white', color: DARK },
+                    { name: 'GROWTH', bg: TEAL,    color: 'white' },
+                    { name: 'SCALE',  bg: DARK,    color: 'white' },
+                  ].map(col => (
+                    <th key={col.name} style={{
+                      padding: '12px 14px', textAlign: 'center', minWidth: 80,
+                      background: col.bg, borderBottom: 'var(--v4-border)', borderLeft: 'var(--v4-border)',
+                    }}>
+                      <span style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 12, letterSpacing: '0.06em', color: col.color }}>
+                        {col.name}
+                      </span>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {TABLE_SECTIONS.map((section, si) => (
+                  <>
+                    <tr key={`mlabel-${section.label}`}>
+                      <td style={{
+                        padding: '7px 14px',
+                        background: '#f1f5f9',
+                        borderTop: si > 0 ? '1px solid #e2e8f0' : 'none',
+                        borderBottom: '1px solid #e2e8f0',
+                        position: 'sticky', left: 0, zIndex: 8,
+                        minWidth: 140,
+                      }}>
+                        <span style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 10, letterSpacing: '0.1em', color: '#64748b' }}>
+                          {section.label.toUpperCase()}
+                        </span>
+                      </td>
+                      {[0,1,2].map(i => (
+                        <td key={i} style={{
+                          background: '#f1f5f9',
+                          borderTop: si > 0 ? '1px solid #e2e8f0' : 'none',
+                          borderBottom: '1px solid #e2e8f0',
+                          minWidth: 80,
+                        }} />
+                      ))}
+                    </tr>
+                    {section.rows.map((row, ri) => {
+                      const isLastRow = si === TABLE_SECTIONS.length - 1 && ri === section.rows.length - 1
+                      const rowBorder = ri < section.rows.length - 1 ? '1px solid #f1f5f9' : si < TABLE_SECTIONS.length - 1 ? '1px solid #e2e8f0' : 'none'
+                      return (
+                        <tr key={`m-${row.feature}`} style={{ background: ri % 2 === 0 ? 'white' : '#fafafa' }}>
+                          <td style={{
+                            padding: '11px 14px', fontSize: 12, color: '#475569',
+                            borderBottom: rowBorder,
+                            position: 'sticky', left: 0, zIndex: 5,
+                            background: ri % 2 === 0 ? 'white' : '#fafafa',
+                            boxShadow: '2px 0 6px rgba(0,0,0,0.04)',
+                            minWidth: 140,
+                          }}>
+                            {row.feature}
+                          </td>
+                          {[row.free, row.growth, row.scale].map((val, ci) => (
+                            <td key={ci} style={{
+                              padding: '11px 10px', minWidth: 80,
+                              borderLeft: '1px solid #f1f5f9',
+                              borderBottom: rowBorder,
                               verticalAlign: 'middle',
                             }}>
                               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
