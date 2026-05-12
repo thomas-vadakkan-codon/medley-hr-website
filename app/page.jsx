@@ -23,6 +23,12 @@ const organizationSchema = {
   name: 'MedleyHR',
   legalName: 'Codonsoft Technologies',
   url: 'https://medleyhr.com',
+  logo: {
+    '@type': 'ImageObject',
+    url: 'https://medleyhr.com/og-image.png',
+    width: 1200,
+    height: 630,
+  },
   email: 'hello@medleyhr.com',
   description:
     'MedleyHR is a self-serve HR and payroll management platform for businesses worldwide. It enables companies to run payroll, manage leaves, track attendance, and stay compliant — without a consultant.',

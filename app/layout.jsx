@@ -55,14 +55,16 @@ export const metadata = {
     description: 'Run payroll, manage leaves, and stay compliant — without a consultant. Free for up to 10 employees. India, US, Middle East, Asia & Africa.',
     url: 'https://medleyhr.com',
     siteName: 'MedleyHR',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'MedleyHR — HR and Payroll Software' }],
     locale: 'en_IN',
     type: 'website',
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'MedleyHR — Self-Serve HR & Payroll Software',
     description: 'Run payroll, manage leaves, and stay compliant — without a consultant. Free for up to 10 employees.',
     creator: '@medleyhr',
+    images: ['/og-image.png'],
   },
   alternates: {
     canonical: 'https://medleyhr.com',
