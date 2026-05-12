@@ -103,7 +103,7 @@ export default function PrivacyPage() {
             background: AMBER, borderRadius: 20, border: BORDER,
             padding: '48px 56px',
           }}>
-            <a href="/v4" style={{
+            <a href="/" style={{
               display: 'inline-flex', alignItems: 'center', gap: 6,
               padding: '5px 12px', border: `1px solid rgba(0,0,0,0.18)`, borderRadius: 999,
               fontSize: 11, fontWeight: 700, color: DARK, letterSpacing: '0.06em',

@@ -25,7 +25,7 @@ export default function Nav() {
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
         {/* Wordmark */}
-        <a href="/v4" style={{ textDecoration: 'none', flexShrink: 0 }}>
+        <a href="/" style={{ textDecoration: 'none', flexShrink: 0 }}>
           <span style={{
             fontFamily: 'Anton, Impact, sans-serif',
             fontSize: 20, color: 'white', letterSpacing: '0.02em',
