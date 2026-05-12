@@ -288,6 +288,8 @@ a {
   /* ── Pricing comparison table — swap to mobile version ── */
   .pricing-table-desktop { display: none !important; }
   .pricing-table-mobile  { display: block !important; }
+  .pricing-table-mobile  { scrollbar-width: none; }
+  .pricing-table-mobile::-webkit-scrollbar { display: none; }
 }
 
 /* ── Tablet (768px – 1023px) ────────── */
