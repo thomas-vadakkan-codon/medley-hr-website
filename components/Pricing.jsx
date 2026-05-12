@@ -1,20 +1,50 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 const TEAL = '#0f9e8a'
 const AMBER = '#F5C518'
 const DARK = '#0D0F14'
 
+const REGIONS = [
+  {
+    id: 'india', flag: '🇮🇳', label: 'India',
+    free:   { price: '₹0' },
+    growth: { price: '₹1,999', annual: '₹1,666', addOn: '₹80' },
+    scale:  { price: '₹3,999', annual: '₹3,332', addOn: '₹100' },
+  },
+  {
+    id: 'us', flag: '🇺🇸', label: 'US / Europe',
+    free:   { price: '$0' },
+    growth: { price: '$99',  annual: '$83',  addOn: '$4' },
+    scale:  { price: '$199', annual: '$166', addOn: '$5' },
+  },
+  {
+    id: 'me', flag: '🇦🇪', label: 'Middle East',
+    free:   { price: '$0' },
+    growth: { price: '$74',  annual: '$62',  addOn: '$3' },
+    scale:  { price: '$159', annual: '$133', addOn: '$4' },
+  },
+  {
+    id: 'asia', flag: '🌏', label: 'Asia & Rest of World',
+    free:   { price: '$0' },
+    growth: { price: '$49', annual: '$41', addOn: '$2' },
+    scale:  { price: '$119', annual: '$99', addOn: '$3' },
+  },
+  {
+    id: 'africa', flag: '🌍', label: 'Africa',
+    free:   { price: '$0' },
+    growth: { price: '$24', annual: '$20', addOn: '$1' },
+    scale:  { price: '$40', annual: '$33', addOn: '$1' },
+  },
+]
+
 const TIERS = [
   {
     num: '01', name: 'FREE',
-    price: '₹0',
     sub: 'Always free · Up to 10 employees',
     bg: 'white', textDark: true,
     badge: null,
-    includes: null,
-    addOn: null,
     highlights: [
       'Up to 10 employees',
       'Record payrolls & view payslips',
@@ -26,12 +56,10 @@ const TIERS = [
   },
   {
     num: '02', name: 'GROWTH',
-    price: '₹1,999', annualPrice: '₹1,666',
     sub: 'Full payroll + HR operations',
     badge: 'MOST POPULAR',
     bg: TEAL, textDark: false,
     includes: '25 employees included',
-    addOn: '₹80 / additional employee',
     highlights: [
       'Full payroll & compliance',
       'Attendance, loans & reimbursements',
@@ -43,12 +71,10 @@ const TIERS = [
   },
   {
     num: '03', name: 'SCALE',
-    price: '₹3,999', annualPrice: '₹3,332',
     sub: 'Everything in Growth, plus team ops',
     badge: null,
     bg: DARK, textDark: false,
     includes: '40 employees included',
-    addOn: '₹100 / additional employee',
     highlights: [
       'Team status & escalations',
       'Direct bank integration',
@@ -149,6 +175,21 @@ const TABLE_SECTIONS = [
   },
 ]
 
+const REGION_MAP = {
+  india:  ['IN'],
+  us:     ['US','CA','GB','DE','FR','NL','IT','ES','SE','NO','DK','FI','AT','CH','BE','PT','IE','AU','NZ','PL','CZ','SK','HU','RO','BG','HR','SI','LT','LV','EE','LU','MT','CY','GR','IS','AL','BA','ME','MK','RS','XK','UA','BY','MD','GE','AM','AZ','RU'],
+  me:     ['AE','SA','QA','KW','BH','OM','JO','LB','IL','IQ','YE','SY','TR','EG','PS','IR'],
+  africa: ['NG','KE','ZA','GH','TZ','ET','UG','RW','SN','CI','MA','TN','DZ','LY','CM','AO','ZM','ZW','MZ','BF','ML','TD','NE','SD','SO','ER','MG','MU','MR','SL','LR','TG','BJ','GA','GQ','CG','CF','BI','DJ','KM','CV','ST','SC','GM','GW','MW','NA','BW','LS','SZ'],
+  asia:   ['SG','MY','TH','PH','ID','VN','MM','KH','LA','BD','LK','NP','PK','JP','KR','CN','HK','TW','MO','MN','BN','TL','AF','KZ','UZ','TM','TJ','KG'],
+}
+
+function getRegionFromCountry(code) {
+  for (const [regionId, countries] of Object.entries(REGION_MAP)) {
+    if (countries.includes(code)) return regionId
+  }
+  return 'asia' // Rest of World falls into Asia & Rest of World tier
+}
+
 function Check({ val, teal }) {
   if (val === false) return <span style={{ color: '#cbd5e1', fontSize: 16 }}>—</span>
   if (val === true) return (
@@ -163,6 +204,28 @@ function Check({ val, teal }) {
 export default function Pricing() {
   const [annual, setAnnual] = useState(false)
   const [tableOpen, setTableOpen] = useState(false)
+  const [regionId, setRegionId] = useState('india')
+
+  useEffect(() => {
+    fetch('https://ipapi.co/json/')
+      .then(r => r.json())
+      .then(data => { if (data?.country_code) setRegionId(getRegionFromCountry(data.country_code)) })
+      .catch(() => {}) // silently fall back to India
+  }, [])
+
+  const region = REGIONS.find(r => r.id === regionId)
+
+  function getPrice(tier) {
+    if (tier.name === 'FREE')    return region.free.price
+    if (tier.name === 'GROWTH')  return annual ? region.growth.annual : region.growth.price
+    if (tier.name === 'SCALE')   return annual ? region.scale.annual  : region.scale.price
+  }
+
+  function getAddOn(tier) {
+    if (tier.name === 'GROWTH') return `+ ${region.growth.addOn} / additional employee`
+    if (tier.name === 'SCALE')  return `+ ${region.scale.addOn} / additional employee`
+    return null
+  }
 
   return (
     <section id="pricing" style={{ padding: '16px 16px' }}>
@@ -202,7 +265,8 @@ export default function Pricing() {
           </div>
         </div>
 
-        {/* Tier cards — clean, minimal */}
+
+        {/* Tier cards */}
         <div className="v4-pricing-tiers" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 10, paddingTop: 18 }}>
           {TIERS.map((tier, i) => (
             <motion.div
@@ -228,76 +292,77 @@ export default function Pricing() {
                 background: tier.bg, borderRadius: 18, border: 'var(--v4-border)',
                 overflow: 'hidden', display: 'flex', flexDirection: 'column', height: '100%',
               }}>
+                <div style={{ padding: '28px 28px 32px', flex: 1, display: 'flex', flexDirection: 'column' }}>
 
-              <div style={{ padding: '28px 28px 32px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                {/* Plan name */}
-                <div style={{ marginBottom: 20 }}>
-                  <p style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 22, margin: '0 0 4px', color: tier.textDark ? DARK : 'white', letterSpacing: '0.03em' }}>
-                    {tier.name}
-                  </p>
-                  <p style={{ fontSize: 12, color: tier.textDark ? '#64748b' : 'rgba(255,255,255,0.45)', margin: 0 }}>
-                    {tier.sub}
-                  </p>
-                </div>
-
-                {/* Price block */}
-                <div style={{ borderTop: `1px solid ${tier.textDark ? '#e2e8f0' : 'rgba(255,255,255,0.12)'}`, paddingTop: 20, marginBottom: 20 }}>
-                  <div style={{ display: 'flex', alignItems: 'flex-end', gap: 6, marginBottom: 6 }}>
-                    <span className="v4-display" style={{ fontSize: 48, color: tier.textDark ? DARK : 'white', lineHeight: 1 }}>
-                      {tier.name === 'FREE' ? '₹0' : (annual ? tier.annualPrice : tier.price)}
-                    </span>
-                    <span style={{ fontSize: 12, color: tier.textDark ? '#94a3b8' : 'rgba(255,255,255,0.4)', marginBottom: 7 }}>
-                      /org/month
-                    </span>
+                  {/* Plan name */}
+                  <div style={{ marginBottom: 20 }}>
+                    <p style={{ fontFamily: 'Anton, Impact, sans-serif', fontSize: 22, margin: '0 0 4px', color: tier.textDark ? DARK : 'white', letterSpacing: '0.03em' }}>
+                      {tier.name}
+                    </p>
+                    <p style={{ fontSize: 12, color: tier.textDark ? '#64748b' : 'rgba(255,255,255,0.45)', margin: 0 }}>
+                      {tier.sub}
+                    </p>
                   </div>
-                  {tier.includes && (
-                    <div style={{
-                      display: 'flex', flexDirection: 'column', gap: 4,
-                      background: tier.textDark ? '#f1f5f9' : 'rgba(255,255,255,0.1)',
-                      borderRadius: 8, padding: '8px 12px', marginTop: 4,
-                    }}>
-                      <span style={{ fontSize: 13, fontWeight: 700, color: tier.textDark ? DARK : 'white' }}>
-                        {tier.includes}
+
+                  {/* Price block */}
+                  <div style={{ borderTop: `1px solid ${tier.textDark ? '#e2e8f0' : 'rgba(255,255,255,0.12)'}`, paddingTop: 20, marginBottom: 20 }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-end', gap: 6, marginBottom: 6 }}>
+                      <span className="v4-display" style={{ fontSize: 48, color: tier.textDark ? DARK : 'white', lineHeight: 1 }}>
+                        {getPrice(tier)}
                       </span>
-                      <span style={{ fontSize: 12, fontWeight: 500, color: tier.textDark ? '#64748b' : 'rgba(255,255,255,0.6)' }}>
-                        + {tier.addOn}
+                      <span style={{ fontSize: 12, color: tier.textDark ? '#94a3b8' : 'rgba(255,255,255,0.4)', marginBottom: 7 }}>
+                        /org/month
                       </span>
                     </div>
-                  )}
+                    {tier.includes && (
+                      <div style={{
+                        display: 'flex', flexDirection: 'column', gap: 4,
+                        background: tier.textDark ? '#f1f5f9' : 'rgba(255,255,255,0.1)',
+                        borderRadius: 8, padding: '8px 12px', marginTop: 4,
+                      }}>
+                        <span style={{ fontSize: 13, fontWeight: 700, color: tier.textDark ? DARK : 'white' }}>
+                          {tier.includes}
+                        </span>
+                        <span style={{ fontSize: 12, fontWeight: 500, color: tier.textDark ? '#64748b' : 'rgba(255,255,255,0.6)' }}>
+                          {getAddOn(tier)}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Highlights */}
+                  <ul style={{ listStyle: 'none', margin: '0 0 28px', padding: 0, flex: 1, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                    {tier.highlights.map(f => (
+                      <li key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: 10 }}>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, marginTop: 1 }}>
+                          <circle cx="8" cy="8" r="7" fill={tier.bg === TEAL ? 'rgba(255,255,255,0.2)' : tier.bg === DARK ? 'rgba(255,255,255,0.1)' : TEAL} />
+                          <polyline points="4.5,8 7,10.5 11.5,5.5" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                        </svg>
+                        <span style={{ fontSize: 13, color: tier.textDark ? '#334155' : 'rgba(255,255,255,0.75)', lineHeight: 1.4, fontWeight: 500 }}>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <a href="https://app.medleyhr.com/signup" style={{
+                    display: 'block', textAlign: 'center', padding: '13px',
+                    background: tier.ctaBg, border: 'var(--v4-border)',
+                    borderRadius: 10, fontSize: 13, fontWeight: 700, color: tier.ctaColor,
+                    textDecoration: 'none', letterSpacing: '0.04em',
+                    fontFamily: 'Plus Jakarta Sans, sans-serif',
+                  }}>
+                    {tier.cta}
+                  </a>
+                  <p style={{ fontSize: 11, textAlign: 'center', marginTop: 8, color: tier.textDark ? '#94a3b8' : 'rgba(255,255,255,0.3)' }}>
+                    {tier.footnote}
+                  </p>
+
                 </div>
-
-                {/* 4 key highlights only */}
-                <ul style={{ listStyle: 'none', margin: '0 0 28px', padding: 0, flex: 1, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                  {tier.highlights.map(f => (
-                    <li key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: 10 }}>
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, marginTop: 1 }}>
-                        <circle cx="8" cy="8" r="7" fill={tier.bg === TEAL ? 'rgba(255,255,255,0.2)' : tier.bg === DARK ? 'rgba(255,255,255,0.1)' : TEAL} />
-                        <polyline points="4.5,8 7,10.5 11.5,5.5" stroke={tier.bg === 'white' ? 'white' : 'white'} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                      </svg>
-                      <span style={{ fontSize: 13, color: tier.textDark ? '#334155' : 'rgba(255,255,255,0.75)', lineHeight: 1.4, fontWeight: 500 }}>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <a href="https://app.medleyhr.com/signup" style={{
-                  display: 'block', textAlign: 'center', padding: '13px',
-                  background: tier.ctaBg, border: 'var(--v4-border)',
-                  borderRadius: 10, fontSize: 13, fontWeight: 700, color: tier.ctaColor,
-                  textDecoration: 'none', letterSpacing: '0.04em',
-                  fontFamily: 'Plus Jakarta Sans, sans-serif',
-                }}>
-                  {tier.cta}
-                </a>
-                <p style={{ fontSize: 11, textAlign: 'center', marginTop: 8, color: tier.textDark ? '#94a3b8' : 'rgba(255,255,255,0.3)' }}>
-                  {tier.footnote}
-                </p>
               </div>
-            </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Compare all features toggle — full width */}
+        {/* Compare all features toggle */}
         <button
           onClick={() => setTableOpen(!tableOpen)}
           style={{
@@ -323,7 +388,6 @@ export default function Pricing() {
             style={{ marginTop: 10, borderRadius: 18, border: 'var(--v4-border)', overflow: 'clip' }}
           >
             <table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: 0, background: 'white', borderRadius: 18 }}>
-              {/* Sticky thead — border-collapse:separate is required for sticky to work */}
               <thead>
                 <tr>
                   <th style={{
@@ -352,11 +416,9 @@ export default function Pricing() {
                   ))}
                 </tr>
               </thead>
-
               <tbody>
                 {TABLE_SECTIONS.map((section, si) => (
                   <>
-                    {/* Section label — sticky on td, not tr */}
                     <tr key={`label-${section.label}`}>
                       <td colSpan={4} style={{
                         padding: '9px 24px',
@@ -371,8 +433,6 @@ export default function Pricing() {
                         </span>
                       </td>
                     </tr>
-
-                    {/* Feature rows */}
                     {section.rows.map((row, ri) => {
                       const isLastRow = si === TABLE_SECTIONS.length - 1 && ri === section.rows.length - 1
                       const rowBorder = ri < section.rows.length - 1 ? '1px solid #f1f5f9' : si < TABLE_SECTIONS.length - 1 ? '1px solid #e2e8f0' : 'none'
@@ -407,7 +467,6 @@ export default function Pricing() {
             </table>
           </motion.div>
         )}
-
 
       </div>
     </section>
