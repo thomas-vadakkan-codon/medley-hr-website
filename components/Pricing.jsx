@@ -476,12 +476,14 @@ export default function Pricing() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2 }}
             className="pricing-table-mobile"
-            style={{
-              marginTop: 10, borderRadius: 18, border: 'var(--v4-border)',
-              overflowX: 'auto', overflowY: 'visible',
-              WebkitOverflowScrolling: 'touch',
-            }}
+            style={{ marginTop: 10, borderRadius: 18, border: 'var(--v4-border)', overflow: 'hidden' }}
           >
+            <div style={{
+              overflowX: 'auto',
+              WebkitOverflowScrolling: 'touch',
+              paddingBottom: 20,
+              marginBottom: -20,
+            }}>
             <table style={{ minWidth: 480, borderCollapse: 'separate', borderSpacing: 0, background: 'white', borderRadius: 18 }}>
               <thead>
                 <tr>
@@ -567,6 +569,7 @@ export default function Pricing() {
                 ))}
               </tbody>
             </table>
+            </div>
           </motion.div>
         )}
 
