@@ -153,6 +153,7 @@ function MockupPeople() {
       <img
         src="/mockup-people.webp"
         alt="MedleyHR Employee List screen"
+        loading="lazy"
         style={{ width: '100%', display: 'block' }}
       />
     </div>
@@ -188,6 +189,7 @@ function MockupLeave() {
       <img
         src="/mockup-leave.webp"
         alt="MedleyHR Leave & Attendance screen"
+        loading="lazy"
         style={{ width: '100%', display: 'block' }}
       />
     </div>
@@ -223,6 +225,7 @@ function MockupTeamStatus() {
       <img
         src="/mockup-team-status.webp"
         alt="MedleyHR Team Status Kanban board"
+        loading="lazy"
         style={{ width: '100%', display: 'block' }}
       />
     </div>
@@ -258,6 +261,7 @@ function MockupEmployeePortal() {
       <img
         src="/mockup-leave.webp"
         alt="MedleyHR Employee Portal dashboard"
+        loading="lazy"
         style={{ width: '100%', display: 'block' }}
       />
     </div>
@@ -293,6 +297,7 @@ function MockupReports() {
       <img
         src="/mockup-reports.webp"
         alt="MedleyHR Generate Reports screen"
+        loading="lazy"
         style={{ width: '100%', display: 'block' }}
       />
     </div>
