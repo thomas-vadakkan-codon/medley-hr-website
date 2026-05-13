@@ -1,3 +1,5 @@
+export const dynamic = 'force-static'
+
 export default function sitemap() {
   const base = 'https://medleyhr.com'
   const now = new Date()
