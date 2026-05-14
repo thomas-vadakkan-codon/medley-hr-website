@@ -71,7 +71,7 @@ export default function BlogCard({ article }) {
               style={{ borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }}
             />
             <span style={{ fontSize: 12, color: 'rgba(13,15,20,0.55)', fontWeight: 600 }}>
-              {author.name.split(' ')[0]}
+              {author.name}
             </span>
           </div>
           <span style={{ fontSize: 12, color: 'rgba(13,15,20,0.4)', fontWeight: 500 }}>
