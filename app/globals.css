@@ -95,7 +95,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -328,8 +328,8 @@ a {
 
 /* ── Blog ────────────────────────────── */
 
-/* Page-level overflow guard */
-.blog-page { overflow-x: hidden; }
+/* Page-level overflow guard — clip instead of hidden so position:sticky still works */
+.blog-page { overflow-x: clip; }
 
 /* Mobile-first hero padding */
 .blog-hero-inner   { padding: 20px 16px 24px; }

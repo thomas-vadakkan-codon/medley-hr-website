@@ -1,17 +1,27 @@
 'use client'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 
-const NAV_LINKS = [
-  { label: 'How it works', href: '#how-it-works' },
-  { label: 'Features', href: '#features' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Why MedleyHR', href: '#why-medleyhr' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Blog', href: '/blog' },
+const SECTIONS = [
+  { label: 'How it works', id: 'how-it-works' },
+  { label: 'Features',     id: 'features' },
+  { label: 'Pricing',      id: 'pricing' },
+  { label: 'Why MedleyHR', id: 'why-medleyhr' },
+  { label: 'FAQ',          id: 'faq' },
 ]
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
+  const isHome = pathname === '/'
+
+  const NAV_LINKS = [
+    ...SECTIONS.map(({ label, id }) => ({
+      label,
+      href: isHome ? `#${id}` : `/#${id}`,
+    })),
+    { label: 'Blog', href: '/blog' },
+  ]
 
   return (
     <nav style={{
