@@ -95,6 +95,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -327,32 +328,77 @@ a {
 
 /* ── Blog ────────────────────────────── */
 
-.blog-hero-inner     { padding: 48px 56px 52px; }
-.blog-cards-grid     { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; align-items: stretch; }
-.blog-article-hero   { padding: 48px 56px 52px; }
-.blog-article-body   { display: grid; grid-template-columns: 1fr 300px; gap: 24px; align-items: start; }
-.blog-article-content { padding: 56px; }
-.blog-article-meta   { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-.blog-meta-dot       { width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,0.2); display: inline-block; flex-shrink: 0; }
-.blog-sidebar        { position: sticky; top: 100px; }
+/* Page-level overflow guard */
+.blog-page { overflow-x: hidden; }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  .blog-hero-inner      { padding: 36px 32px 40px !important; }
-  .blog-article-hero    { padding: 36px 32px 40px !important; }
-  .blog-article-body    { grid-template-columns: 1fr !important; }
-  .blog-article-content { padding: 36px !important; }
-  .blog-cards-grid      { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important; }
+/* Mobile-first hero padding */
+.blog-hero-inner   { padding: 20px 16px 24px; }
+.blog-article-hero { padding: 20px 16px 24px; }
+
+/* Cards grid — mobile first: 1 col, expands on wider screens */
+.blog-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: stretch;
 }
 
-@media (max-width: 767px) {
-  .blog-hero-inner      { padding: 24px 20px 28px !important; }
-  .blog-article-hero    { padding: 24px 20px 28px !important; }
-  .blog-article-body    { grid-template-columns: 1fr !important; gap: 12px !important; }
-  .blog-article-content { padding: 20px !important; }
-  .blog-cards-grid      { grid-template-columns: 1fr !important; }
-  .blog-article-meta    { gap: 8px !important; flex-direction: column !important; align-items: flex-start !important; }
-  .blog-meta-dot        { display: none !important; }
-  .blog-sidebar         { position: static !important; }
+/* Article layout — mobile first: single column stack */
+.blog-article-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+/* Critical: prevent grid children from overflowing their cell */
+.blog-article-body > * { min-width: 0; }
+
+/* Content card — mobile first: compact padding */
+.blog-article-content {
+  padding: 16px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* All text inside article wraps properly */
+.blog-article-content p,
+.blog-article-content li,
+.blog-article-content h2,
+.blog-article-content h3 {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Tables scroll horizontally instead of overflowing */
+.blog-article-content .blog-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+
+.blog-article-meta  { display: flex; align-items: flex-start; flex-direction: column; gap: 6px; flex-wrap: wrap; }
+.blog-meta-dot      { display: none; }
+.blog-sidebar       { position: static; }
+
+/* Tablet 768px+ */
+@media (min-width: 768px) {
+  .blog-hero-inner      { padding: 36px 32px 40px; }
+  .blog-article-hero    { padding: 36px 32px 40px; }
+  .blog-article-content { padding: 36px; }
+  .blog-cards-grid      { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+  .blog-article-meta    { flex-direction: row; align-items: center; gap: 20px; }
+  .blog-meta-dot        { display: inline-block; }
+}
+
+/* Desktop 1024px+ — two-column article layout */
+@media (min-width: 1024px) {
+  .blog-hero-inner      { padding: 48px 56px 52px; }
+  .blog-article-hero    { padding: 48px 56px 52px; }
+  .blog-article-body    { grid-template-columns: minmax(0, 1fr) 300px; gap: 24px; }
+  .blog-article-content { padding: 56px; }
+  .blog-cards-grid      { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+  .blog-sidebar         { position: sticky; top: 100px; }
 }
 
 /* ── Contact Modal ───────────────────── */
