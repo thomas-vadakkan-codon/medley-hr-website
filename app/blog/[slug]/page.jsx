@@ -1,6 +1,6 @@
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import { getArticle, getAllSlugs } from '@/lib/articles'
+import { getArticle, getAllSlugs, AUTHORS } from '@/lib/articles'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
@@ -172,7 +172,7 @@ function JsonLd({ data }) {
   )
 }
 
-function ArticleSchemas({ article }) {
+function ArticleSchemas({ article, author }) {
   const url = `https://medleyhr.com/blog/${article.slug}`
 
   const articleSchema = {
@@ -183,7 +183,7 @@ function ArticleSchemas({ article }) {
     description: article.description,
     datePublished: article.publishDate,
     dateModified: article.publishDate,
-    author: { '@type': 'Organization', name: 'MedleyHR', url: 'https://medleyhr.com' },
+    author: { '@type': 'Person', name: author.name, jobTitle: author.role, worksFor: { '@type': 'Organization', name: 'MedleyHR', url: 'https://medleyhr.com' } },
     publisher: {
       '@type': 'Organization',
       name: 'MedleyHR',
@@ -233,13 +233,15 @@ export default async function ArticlePage({ params }) {
   const article = getArticle(slug)
   if (!article) notFound()
 
+  const author = AUTHORS[article.author] || AUTHORS.harshitha
+
   const publishedFormatted = new Date(article.publishDate).toLocaleDateString('en-IN', {
     day: 'numeric', month: 'long', year: 'numeric',
   })
 
   return (
     <div className="blog-page" style={{ background: '#F0F4F1', minHeight: '100vh', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
-      <ArticleSchemas article={article} />
+      <ArticleSchemas article={article} author={author} />
       <Nav />
 
       {/* Hero header */}
@@ -290,8 +292,17 @@ export default async function ArticlePage({ params }) {
                 {article.readTime}
               </span>
               <span className="blog-meta-dot" />
-              <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', fontWeight: 500 }}>
-                By MedleyHR
+              <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <img
+                  src={author.photo}
+                  alt={author.name}
+                  width={22}
+                  height={22}
+                  style={{ borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }}
+                />
+                <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', fontWeight: 500 }}>
+                  {author.name}
+                </span>
               </span>
             </div>
           </div>
@@ -384,6 +395,39 @@ export default async function ArticlePage({ params }) {
               </a>
             </div>
           </aside>
+        </div>
+      </div>
+
+      {/* Author bio */}
+      <div style={{ padding: '0 16px 64px' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+          <div style={{
+            background: 'white', borderRadius: 16, border: `2px solid ${DARK}`,
+            padding: '28px 32px', display: 'flex', alignItems: 'center', gap: 24,
+            flexWrap: 'wrap',
+          }}>
+            <img
+              src={author.photo}
+              alt={author.name}
+              width={72}
+              height={72}
+              style={{ borderRadius: '50%', objectFit: 'cover', flexShrink: 0, border: `2px solid ${DARK}` }}
+            />
+            <div style={{ minWidth: 0 }}>
+              <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', color: TEAL, textTransform: 'uppercase', margin: '0 0 4px' }}>
+                Written by
+              </p>
+              <p style={{ fontSize: 17, fontWeight: 700, color: DARK, margin: '0 0 4px' }}>
+                {author.name}
+              </p>
+              <p style={{ fontSize: 12, fontWeight: 600, color: 'rgba(13,15,20,0.4)', margin: '0 0 10px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                {author.role}
+              </p>
+              <p style={{ fontSize: 14, color: 'rgba(13,15,20,0.6)', lineHeight: 1.6, margin: 0 }}>
+                {author.bio}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 

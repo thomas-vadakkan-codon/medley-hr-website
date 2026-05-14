@@ -1,4 +1,5 @@
 'use client'
+import { AUTHORS } from '@/lib/articles'
 
 const TEAL = '#0f9e8a'
 const DARK = '#0D0F14'
@@ -17,6 +18,7 @@ function TagPill({ label }) {
 }
 
 export default function BlogCard({ article }) {
+  const author = AUTHORS[article.author] || AUTHORS.harshitha
   return (
     <a href={`/blog/${article.slug}`} style={{ textDecoration: 'none', display: 'flex', height: '100%' }}>
       <article
@@ -60,11 +62,18 @@ export default function BlogCard({ article }) {
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
           paddingTop: 16, borderTop: '1px solid rgba(13,15,20,0.08)',
         }}>
-          <span style={{ fontSize: 12, color: 'rgba(13,15,20,0.4)', fontWeight: 500 }}>
-            {new Date(article.publishDate).toLocaleDateString('en-IN', {
-              day: 'numeric', month: 'short', year: 'numeric',
-            })}
-          </span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <img
+              src={author.photo}
+              alt={author.name}
+              width={24}
+              height={24}
+              style={{ borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }}
+            />
+            <span style={{ fontSize: 12, color: 'rgba(13,15,20,0.55)', fontWeight: 600 }}>
+              {author.name.split(' ')[0]}
+            </span>
+          </div>
           <span style={{ fontSize: 12, color: 'rgba(13,15,20,0.4)', fontWeight: 500 }}>
             {article.readTime}
           </span>
