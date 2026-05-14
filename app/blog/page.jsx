@@ -30,9 +30,8 @@ export default function BlogPage() {
       {/* Hero */}
       <div style={{ padding: '90px 16px 0' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-          <div style={{
+          <div className="blog-hero-inner" style={{
             background: DARK, borderRadius: 20, border: `2px solid ${DARK}`,
-            padding: '48px 56px 52px',
           }}>
             <p style={{
               fontSize: 11, fontWeight: 700, letterSpacing: '0.12em',
@@ -61,12 +60,7 @@ export default function BlogPage() {
       {/* Articles grid */}
       <div style={{ padding: '32px 16px 80px' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
-            gap: 16,
-            alignItems: 'stretch',
-          }}>
+          <div className="blog-cards-grid">
             {sorted.map((article) => (
               <BlogCard key={article.slug} article={article} />
             ))}

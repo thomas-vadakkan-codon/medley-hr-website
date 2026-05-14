@@ -245,10 +245,9 @@ export default async function ArticlePage({ params }) {
       {/* Hero header */}
       <div style={{ padding: '90px 16px 0' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-          <div style={{
+          <div className="blog-article-hero" style={{
             background: DARK, borderRadius: 20,
             border: `2px solid ${DARK}`,
-            padding: '48px 56px 52px',
           }}>
             <a href="/blog" style={{
               display: 'inline-flex', alignItems: 'center', gap: 6,
@@ -282,21 +281,15 @@ export default async function ArticlePage({ params }) {
               {article.title}
             </h1>
 
-            <div style={{ display: 'flex', gap: 20, alignItems: 'center', flexWrap: 'wrap' }}>
+            <div className="blog-article-meta">
               <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', fontWeight: 500 }}>
                 {publishedFormatted}
               </span>
-              <span style={{
-                width: 3, height: 3, borderRadius: '50%',
-                background: 'rgba(255,255,255,0.2)', display: 'inline-block',
-              }} />
+              <span className="blog-meta-dot" />
               <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', fontWeight: 500 }}>
                 {article.readTime}
               </span>
-              <span style={{
-                width: 3, height: 3, borderRadius: '50%',
-                background: 'rgba(255,255,255,0.2)', display: 'inline-block',
-              }} />
+              <span className="blog-meta-dot" />
               <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', fontWeight: 500 }}>
                 By MedleyHR
               </span>
@@ -307,13 +300,12 @@ export default async function ArticlePage({ params }) {
 
       {/* Article body */}
       <div style={{ padding: '40px 16px 80px' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24, alignItems: 'start' }}>
+        <div className="blog-article-body" style={{ maxWidth: 1280, margin: '0 auto' }}>
 
           {/* Main content */}
-          <div style={{
+          <div className="blog-article-content" style={{
             background: 'white', borderRadius: 16,
             border: `2px solid ${DARK}`,
-            padding: 'clamp(28px, 5vw, 56px)',
           }}>
             {article.content.map((block, i) => (
               <ContentBlock key={i} block={block} />
@@ -321,7 +313,7 @@ export default async function ArticlePage({ params }) {
           </div>
 
           {/* Sidebar */}
-          <aside style={{ position: 'sticky', top: 100 }}>
+          <aside className="blog-sidebar">
             {/* CTA card */}
             <div style={{
               background: DARK, borderRadius: 16,
