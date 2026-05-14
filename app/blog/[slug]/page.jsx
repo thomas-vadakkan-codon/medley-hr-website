@@ -310,7 +310,7 @@ export default async function ArticlePage({ params }) {
       </div>
 
       {/* Article body */}
-      <div style={{ padding: '40px 16px 32px' }}>
+      <div style={{ padding: '40px 16px 24px' }}>
         <div className="blog-article-body" style={{ maxWidth: 1280, margin: '0 auto' }}>
 
           {/* Main content */}
@@ -398,29 +398,29 @@ export default async function ArticlePage({ params }) {
         </div>
       </div>
 
-      {/* Author bio */}
-      <div style={{ padding: '0 16px 24px' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+      {/* Author bio — same grid wrapper as article body so card matches content column width */}
+      <div style={{ padding: '0 16px 48px' }}>
+        <div className="blog-article-body" style={{ maxWidth: 1280, margin: '0 auto' }}>
           <div style={{
             background: 'white', borderRadius: 16, border: `2px solid ${DARK}`,
-            padding: '28px 32px', display: 'flex', alignItems: 'center', gap: 24,
+            padding: '24px 28px', display: 'flex', alignItems: 'center', gap: 20,
             flexWrap: 'wrap',
           }}>
             <img
               src={author.photo}
               alt={author.name}
-              width={72}
-              height={72}
+              width={64}
+              height={64}
               style={{ borderRadius: '50%', objectFit: 'cover', flexShrink: 0, border: `2px solid ${DARK}` }}
             />
             <div style={{ minWidth: 0 }}>
               <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', color: TEAL, textTransform: 'uppercase', margin: '0 0 4px' }}>
                 Written by
               </p>
-              <p style={{ fontSize: 17, fontWeight: 700, color: DARK, margin: '0 0 4px' }}>
+              <p style={{ fontSize: 17, fontWeight: 700, color: DARK, margin: '0 0 2px' }}>
                 {author.name}
               </p>
-              <p style={{ fontSize: 12, fontWeight: 600, color: 'rgba(13,15,20,0.4)', margin: '0 0 10px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+              <p style={{ fontSize: 12, fontWeight: 600, color: 'rgba(13,15,20,0.4)', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                 {author.role}
               </p>
               <p style={{ fontSize: 14, color: 'rgba(13,15,20,0.6)', lineHeight: 1.6, margin: 0 }}>
