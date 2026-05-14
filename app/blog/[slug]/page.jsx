@@ -399,12 +399,11 @@ export default async function ArticlePage({ params }) {
       </div>
 
       {/* Author bio — same grid wrapper as article body so card matches content column width */}
-      <div style={{ padding: '0 16px 48px' }}>
+      <div style={{ padding: '0 16px 16px' }}>
         <div className="blog-article-body" style={{ maxWidth: 1280, margin: '0 auto' }}>
           <div style={{
             background: 'white', borderRadius: 16, border: `2px solid ${DARK}`,
             padding: '24px 28px', display: 'flex', alignItems: 'center', gap: 20,
-            flexWrap: 'wrap',
           }}>
             <img
               src={author.photo}
