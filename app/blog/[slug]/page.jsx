@@ -379,7 +379,7 @@ export default async function ArticlePage({ params }) {
               }}>
                 ← Back to all articles
               </a>
-              <a href="/#pricing" style={{
+              <a href="https://medleyhr.com/#pricing" style={{
                 display: 'block', fontSize: 13, fontWeight: 600,
                 color: DARK, textDecoration: 'none', lineHeight: 1.4,
                 padding: '8px 0', borderBottom: '1px solid rgba(13,15,20,0.06)',
