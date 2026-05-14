@@ -16,6 +16,11 @@ const anton = Anton({
   variable: '--font-anton',
 })
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
+
 export const metadata = {
   metadataBase: new URL('https://medleyhr.com'),
   title: {
