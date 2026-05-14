@@ -1,6 +1,6 @@
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import { getArticle, getAllSlugs, AUTHORS } from '@/lib/articles'
+import { getArticle, getAllSlugs, AUTHORS, getRelatedArticles } from '@/lib/articles'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
@@ -88,6 +88,28 @@ function ContentBlock({ block }) {
             </li>
           ))}
         </ol>
+      )
+
+    case 'related-reading':
+      return (
+        <div style={{
+          margin: '0 0 24px', padding: '12px 18px',
+          background: 'rgba(15,158,138,0.06)', borderRadius: 8,
+          borderLeft: '3px solid rgba(15,158,138,0.4)',
+          display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '4px 0',
+        }}>
+          <span style={{ fontSize: 12, fontWeight: 700, color: TEAL, textTransform: 'uppercase', letterSpacing: '0.06em', marginRight: 8, flexShrink: 0 }}>
+            Related:
+          </span>
+          {block.links.map((link, i) => (
+            <span key={i} style={{ display: 'inline-flex', alignItems: 'center' }}>
+              {i > 0 && <span style={{ color: 'rgba(13,15,20,0.25)', margin: '0 8px' }}>·</span>}
+              <a href={link.href} style={{ fontSize: 13, color: TEAL, fontWeight: 600, textDecoration: 'none' }}>
+                {link.text}
+              </a>
+            </span>
+          ))}
+        </div>
       )
 
     case 'callout':
@@ -234,6 +256,7 @@ export default async function ArticlePage({ params }) {
   if (!article) notFound()
 
   const author = AUTHORS[article.author] || AUTHORS.harshitha
+  const relatedArticles = getRelatedArticles(article.related)
 
   const publishedFormatted = new Date(article.publishDate).toLocaleDateString('en-IN', {
     day: 'numeric', month: 'long', year: 'numeric',
@@ -370,29 +393,18 @@ export default async function ArticlePage({ params }) {
                 color: 'rgba(13,15,20,0.4)', textTransform: 'uppercase',
                 marginBottom: 14,
               }}>
-                More from MedleyHR
+                Related Articles
               </p>
-              <a href="/blog" style={{
-                display: 'block', fontSize: 13, fontWeight: 600,
-                color: DARK, textDecoration: 'none', lineHeight: 1.4,
-                padding: '8px 0', borderBottom: '1px solid rgba(13,15,20,0.06)',
-              }}>
-                ← Back to all articles
-              </a>
-              <a href="https://medleyhr.com/#pricing" style={{
-                display: 'block', fontSize: 13, fontWeight: 600,
-                color: DARK, textDecoration: 'none', lineHeight: 1.4,
-                padding: '8px 0', borderBottom: '1px solid rgba(13,15,20,0.06)',
-              }}>
-                View pricing plans
-              </a>
-              <a href="https://app.medleyhr.com/signup" style={{
-                display: 'block', fontSize: 13, fontWeight: 600,
-                color: TEAL, textDecoration: 'none', lineHeight: 1.4,
-                padding: '8px 0',
-              }}>
-                Sign up free →
-              </a>
+              {relatedArticles.map((rel, i) => (
+                <a key={rel.slug} href={`/blog/${rel.slug}`} style={{
+                  display: 'block', fontSize: 13, fontWeight: 600,
+                  color: DARK, textDecoration: 'none', lineHeight: 1.4,
+                  padding: '8px 0',
+                  borderBottom: i < relatedArticles.length - 1 ? '1px solid rgba(13,15,20,0.06)' : 'none',
+                }}>
+                  {rel.title}
+                </a>
+              ))}
             </div>
           </aside>
         </div>
