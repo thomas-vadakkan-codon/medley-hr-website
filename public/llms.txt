@@ -98,13 +98,13 @@ MedleyHR is free for up to 10 employees in India (5 employees for other regions)
 
 MedleyHR publishes practical guides for HR teams and founders at https://medleyhr.com/blog. Articles cover:
 
-- Cloud-based HRMS evaluation for Indian businesses: https://medleyhr.com/blog/cloud-based-hrms-india
-- HR software comparison — Keka vs Zoho People vs Darwinbox vs MedleyHR: https://medleyhr.com/blog/best-hr-software-india-2026
-- Payroll management software guide for India: https://medleyhr.com/blog/payroll-management-software-india
-- HRMS for small businesses in India (10–200 employees): https://medleyhr.com/blog/hrms-small-business-india
-- Attendance and payroll management without spreadsheets: https://medleyhr.com/blog/attendance-payroll-management
-- PF and ESI calculation in India — how PF is deducted from salary, EPF vs EPS split, wage ceilings, worked examples: https://medleyhr.com/blog/pf-calculation-india-salary
-- Old tax regime vs new tax regime for salaried employees — slabs, deductions, worked examples, Form 12BB: https://medleyhr.com/blog/old-vs-new-tax-regime-india
+- Cloud-based HRMS evaluation for Indian businesses (related: best HR software comparison, HRMS for small business): https://medleyhr.com/blog/cloud-based-hrms-india
+- HR software comparison — Keka vs Zoho People vs Darwinbox vs MedleyHR (related: cloud HRMS guide, payroll software guide): https://medleyhr.com/blog/best-hr-software-india-2026
+- Payroll management software guide for India (related: PF and ESI calculation, old vs new tax regime): https://medleyhr.com/blog/payroll-management-software-india
+- HRMS for small businesses in India 10–200 employees (related: cloud HRMS guide, attendance and payroll): https://medleyhr.com/blog/hrms-small-business-india
+- Attendance and payroll management without spreadsheets (related: payroll software guide, PF and ESI calculation): https://medleyhr.com/blog/attendance-payroll-management
+- PF and ESI calculation in India — EPF vs EPS split, wage ceilings, worked examples, ECR filing (related: old vs new tax regime, payroll software guide): https://medleyhr.com/blog/pf-calculation-india-salary
+- Old tax regime vs new tax regime for salaried employees — slabs, deductions, worked examples, Form 12BB (related: PF and ESI calculation, best HR software): https://medleyhr.com/blog/old-vs-new-tax-regime-india
 
 ## Legal
 

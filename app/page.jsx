@@ -7,6 +7,7 @@ import Pricing from '@/components/Pricing'
 import FoundersNote from '@/components/FoundersNote'
 import FAQ from '@/components/FAQ'
 import FinalCTA from '@/components/FinalCTA'
+import BlogTeaser from '@/components/BlogTeaser'
 import Footer from '@/components/Footer'
 
 export const metadata = {
@@ -250,6 +251,7 @@ export default function HomePage() {
         <Pricing />
         <FoundersNote />
         <FAQ />
+        <BlogTeaser />
         <FinalCTA />
         <Footer />
       </main>
