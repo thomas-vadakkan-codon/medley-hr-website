@@ -1,3 +1,4 @@
+'use client'
 import { ARTICLES } from '@/lib/articles'
 
 const TEAL = '#0f9e8a'
