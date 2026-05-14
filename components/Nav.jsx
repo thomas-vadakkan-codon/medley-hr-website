@@ -46,7 +46,7 @@ export default function Nav() {
 
         {/* CTAs — desktop only */}
         <div className="v4-nav-ctas" style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-          <a href="https://app.medleyhr.com/login" style={{
+          <a href="https://app.medleyhr.com/signin" style={{
             padding: '8px 16px',
             background: 'transparent', border: '1.5px solid rgba(255,255,255,0.18)', borderRadius: 8,
             fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.65)', textDecoration: 'none',
@@ -112,7 +112,7 @@ export default function Nav() {
             </a>
           ))}
           <div style={{ display: 'flex', gap: 8, marginTop: 14 }}>
-            <a href="https://app.medleyhr.com/login" style={{
+            <a href="https://app.medleyhr.com/signin" style={{
               flex: 1, textAlign: 'center', padding: '10px 16px',
               border: '1.5px solid rgba(255,255,255,0.18)', borderRadius: 8,
               fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.65)', textDecoration: 'none',

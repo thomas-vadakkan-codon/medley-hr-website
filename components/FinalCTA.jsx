@@ -37,7 +37,7 @@ export default function FinalCTA() {
             }}>
               CREATE FREE ACCOUNT
             </a>
-            <a href="#" style={{
+            <a href="https://app.medleyhr.com/signin" style={{
               display: 'block', textAlign: 'center', padding: '14px 28px',
               border: 'var(--v4-border)', borderRadius: 10,
               fontSize: 13, fontWeight: 600, color: 'var(--color-v4-dark)', textDecoration: 'none',
