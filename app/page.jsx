@@ -189,7 +189,7 @@ const faqSchema = {
       name: 'How much does MedleyHR cost?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'MedleyHR is free for up to 10 employees (FREE plan — no credit card needed). The Growth plan is ₹1,999 per organisation per month (India), with 25 employees included and ₹80 per additional employee. The Scale plan is ₹3,999 per organisation per month (India), with 40 employees included and ₹100 per additional employee. Annual billing saves 2 months. Pricing is region-specific — US/Europe, Middle East, Asia, and Africa have separate rates. No setup fee, no implementation cost, no contracts.',
+        text: 'MedleyHR is free for up to 10 employees in India (5 employees for other regions). The Growth plan is ₹1,999 per organisation per month (India), with 25 employees included and ₹80 per additional employee. The Scale plan is ₹3,999 per organisation per month (India), with 40 employees included and ₹100 per additional employee. Annual billing saves 17%. Pricing is region-specific — US/Europe, Middle East, Asia, and Africa have separate rates. No setup fee, no implementation cost, no contracts.',
       },
     },
     {

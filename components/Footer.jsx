@@ -59,6 +59,7 @@ export default function Footer() {
                 { label: 'Pricing',      href: '/#pricing' },
                 { label: 'Why MedleyHR', href: '/#why-medleyhr' },
                 { label: 'FAQ',          href: '/#faq' },
+                { label: 'Blog',         href: '/blog' },
                 { label: 'Sign in',      href: 'https://app.medleyhr.com/signin' },
               ].map(({ label, href }) => (
                 <li key={label}><a href={href} style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', fontWeight: 500, textDecoration: 'none' }}>{label}</a></li>

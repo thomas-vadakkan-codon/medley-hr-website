@@ -46,9 +46,9 @@ export default function Hero() {
 
           {/* Left — amber headline card */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             className="v4-hero-left"
             style={{
               background: 'var(--color-v4-amber)', borderRadius: 20,

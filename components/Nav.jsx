@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { label: 'Pricing', href: '#pricing' },
   { label: 'Why MedleyHR', href: '#why-medleyhr' },
   { label: 'FAQ', href: '#faq' },
+  { label: 'Blog', href: '/blog' },
 ]
 
 export default function Nav() {
