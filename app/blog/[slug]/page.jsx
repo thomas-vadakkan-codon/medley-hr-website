@@ -310,7 +310,7 @@ export default async function ArticlePage({ params }) {
       </div>
 
       {/* Article body */}
-      <div style={{ padding: '40px 16px 80px' }}>
+      <div style={{ padding: '40px 16px 32px' }}>
         <div className="blog-article-body" style={{ maxWidth: 1280, margin: '0 auto' }}>
 
           {/* Main content */}
@@ -399,7 +399,7 @@ export default async function ArticlePage({ params }) {
       </div>
 
       {/* Author bio */}
-      <div style={{ padding: '0 16px 64px' }}>
+      <div style={{ padding: '0 16px 24px' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto' }}>
           <div style={{
             background: 'white', borderRadius: 16, border: `2px solid ${DARK}`,
