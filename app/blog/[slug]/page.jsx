@@ -114,7 +114,7 @@ function ContentBlock({ block }) {
 
     case 'table':
       return (
-        <div style={{ overflowX: 'auto', margin: '24px 0 28px' }}>
+        <div className="blog-table-wrap" style={{ margin: '24px 0 28px' }}>
           <table style={{
             width: '100%', borderCollapse: 'collapse',
             fontSize: 14, minWidth: 480,
@@ -238,7 +238,7 @@ export default async function ArticlePage({ params }) {
   })
 
   return (
-    <div style={{ background: '#F0F4F1', minHeight: '100vh', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
+    <div className="blog-page" style={{ background: '#F0F4F1', minHeight: '100vh', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
       <ArticleSchemas article={article} />
       <Nav />
 
