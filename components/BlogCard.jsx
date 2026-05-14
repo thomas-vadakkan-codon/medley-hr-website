@@ -74,16 +74,9 @@ export default function BlogCard({ article }) {
               {author.name}
             </span>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 2 }}>
-            <span style={{ fontSize: 12, color: 'rgba(13,15,20,0.4)', fontWeight: 500 }}>
-              {article.readTime}
-            </span>
-            <span style={{ fontSize: 11, color: 'rgba(13,15,20,0.3)', fontWeight: 500 }}>
-              {new Date(article.publishDate).toLocaleDateString('en-IN', {
-                day: 'numeric', month: 'short', year: 'numeric',
-              })}
-            </span>
-          </div>
+          <span style={{ fontSize: 12, color: 'rgba(13,15,20,0.4)', fontWeight: 500 }}>
+            {article.readTime}
+          </span>
         </div>
       </article>
     </a>
